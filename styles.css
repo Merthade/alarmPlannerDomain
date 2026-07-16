@@ -119,18 +119,19 @@ img.screen {
 }
 .trust-row span::before { content: "✓ "; color: var(--accent); font-weight: 700; }
 
-/* Android interest (secondary CTA next to the iOS download) */
-.android-cta { margin-top: 22px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.android-cta--center { justify-content: center; margin-top: 20px; }
-.android-cta-label { color: var(--muted); font-size: 14.5px; }
-.btn-android {
-  font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer;
-  padding: 11px 20px; border-radius: 12px;
-  background: var(--panel); color: var(--text); border: 1px solid var(--border);
-  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+/* Android interest (inline green text link next to the iOS download) */
+.android-cta { margin-top: 30px; font-size: 14.5px; color: var(--muted); }
+.android-cta--center { text-align: center; margin-top: 20px; }
+.android-link {
+  font: inherit; color: var(--accent-soft);
+  background: none; border: 0; padding: 0; margin: 0;
+  appearance: none; -webkit-appearance: none;
+  display: inline; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px;
+  transition: color 0.18s ease;
 }
-.btn-android:hover { background: var(--panel-2); border-color: var(--accent); transform: translateY(-1px); }
-.android-cta-done { color: var(--accent-soft); font-size: 15px; font-weight: 600; margin: 0; }
+.android-link:hover { color: var(--accent); text-decoration: underline; }
+.android-cta-done { color: var(--accent-soft); font-weight: 600; margin: 0; }
 
 /* ---------- Sections ---------- */
 section { padding: 64px 0; }

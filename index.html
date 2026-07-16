@@ -154,10 +154,7 @@
         </a>
         <a class="btn-secondary" href="#how-it-works">See how it works</a>
       </div>
-      <div class="android-cta" id="android-cta">
-        <span class="android-cta-label">On Android?</span>
-        <button type="button" class="btn-android" id="android-btn">Register your interest</button>
-      </div>
+      <div class="android-cta" id="android-cta">On Android? <button type="button" class="android-link" id="android-btn">Register your interest</button></div>
       <div class="trust-row">
         <span>Free for up to 3 alarms</span>
         <span>One-time unlock, no ongoing fees</span>
@@ -486,10 +483,7 @@
         </span>
       </div>
     </a>
-    <div class="android-cta android-cta--center" id="android-cta-bottom">
-      <span class="android-cta-label">On Android?</span>
-      <button type="button" class="btn-android" id="android-btn-bottom">Register your interest</button>
-    </div>
+    <div class="android-cta android-cta--center" id="android-cta-bottom">On Android? <button type="button" class="android-link" id="android-btn-bottom">Register your interest</button></div>
   </div>
 </section>
 
@@ -536,7 +530,7 @@
                 if (window.posthog) {
                     posthog.capture('android_waitlist_signup', { page: location.pathname });
                 }
-                container.innerHTML = '<p class="android-cta-done">Thanks. Your interest in an Android version has been noted.</p>';
+                container.innerHTML = '<span class="android-cta-done">Thanks. Your interest in an Android version has been noted.</span>';
             });
         }
         setup('android-btn', 'android-cta');
