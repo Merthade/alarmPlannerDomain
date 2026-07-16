@@ -1,0 +1,10 @@
+# macOS junk
+.DS_Store
+
+# Site generators: local tooling with machine paths, not needed to serve the site
+# (they live on disk only, like the Images/ screenshot pipeline scripts)
+_gen/
+
+# Python leftovers
+__pycache__/
+*.pyc
