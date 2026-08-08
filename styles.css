@@ -203,6 +203,10 @@ h2 { font-size: clamp(26px, 3.6vw, 36px); font-weight: 800; letter-spacing: -0.0
 .guide-card h3 { font-size: 16.5px; margin-bottom: 6px; color: var(--text); }
 .guide-card p { color: var(--muted); font-size: 14.5px; }
 .guide-card .more { display: inline-block; margin-top: 10px; color: var(--accent-soft); font-size: 14px; font-weight: 600; }
+/* Guides hub: each cluster is a heading + a paragraph of context above its card grid. Clusters are
+   sibling .container blocks, so the gap goes on every one after the first. */
+.guide-cluster + .guide-cluster { margin-top: 52px; }
+.cluster-intro { color: var(--muted); max-width: 780px; margin: 10px 0 22px; font-size: 15.5px; }
 
 /* FAQ */
 .faq-list { max-width: 780px; }

@@ -46,6 +46,62 @@
   "url": "https://alarmclockplanner.com/guides/"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can the iPhone Clock app set an alarm for a specific date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. An alarm there is a time plus, optionally, days of the week, and as of iOS 26 there is still no date field. For a date inside the next 7 days you can set the matching weekday and delete the alarm after it fires. Beyond that you need Shortcuts or an alarm app built around dates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do iPhone alarms ring on Silent mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Alarms are exempt from the Silent switch, and from Do Not Disturb and Focus modes. This is one of the few places iOS deliberately overrides your own settings, and it is why an alarm is not the same thing as a notification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between an alarm and a reminder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A reminder is a notification: it plays a short tone at notification volume, respects Silent and Focus, and stops by itself. An alarm interrupts. For an errand at 3 PM the difference does not matter. For medication or a 4:30 start it is the whole point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you set a monthly or yearly alarm on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not in the Clock app, whose only repeat unit is the weekday. The Reminders app can repeat monthly and yearly but sends a notification rather than an alarm. A dedicated alarm app can do monthly, yearly, and every-N intervals with a real alarm at the end of them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you skip one occurrence of a repeating alarm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Clock app has no skip option, so the only route is switching the alarm off and remembering to switch it back on. That forgotten second step is the usual cause of oversleeping the day after a day off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an alarm widget for iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not from Apple. The built-in Clock app ships no widget, so there is nothing to add from the stock alarm. Third-party alarm apps can provide Home Screen and Lock Screen widgets showing your next alarm."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -70,9 +126,13 @@
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Guides</nav>
   <h1>iPhone Alarm Guides</h1>
   <p class="lede">Straight answers to the alarm questions the built-in Clock app raises, and how Alarm Clock Planner handles each one. No fluff, verified against current iOS behavior.</p>
+  <p>Most of these guides exist because of the same underlying design decision: an alarm in the iPhone Clock app is a time, plus optionally a set of weekdays, and nothing else. No date, no interval, no way to skip a single morning. That one constraint is where almost every question below comes from, and it has not changed in years.</p>
+  <p>Each guide states what the built-in Clock app can and cannot do first, then the workarounds worth knowing, then how <a href="/">Alarm Clock Planner</a> handles it. Where the honest answer is that something is not possible, or that a workaround is bad, the guide says that instead of selling around it.</p>
 </article>
 <section style="padding-top: 0;">
-  <div class="container">
+  <div class="container guide-cluster">
+    <h2>Dates and one-off alarms</h2>
+    <p class="cluster-intro">The gap people hit first: an alarm in the built-in Clock app is a time plus, optionally, days of the week. There is no date field anywhere in it. Set an alarm for 05:30 and it rings at the next 05:30, which is today or tomorrow, never the specific day you had in mind. These guides cover what to do when the alarm belongs to a date rather than a weekday.</p>
     <div class="guide-grid">
       <a class="guide-card" href="/guides/set-alarm-for-specific-date-iphone/">
         <h3>How to Set an Alarm for a Specific Date on iPhone</h3>
@@ -84,24 +144,52 @@
         <p>The 6:10 departure is booked.</p>
         <span class="more">Read the guide</span>
       </a>
+      <a class="guide-card" href="/guides/nap-alarm-iphone/">
+        <h3>How to Set a Quick Nap Alarm on iPhone</h3>
+        <p>It is 14:47, you have until 15:30, and the last thing your tired brain needs is arithmetic.</p>
+        <span class="more">Read the guide</span>
+      </a>
+    </div>
+  </div>
+  <div class="container guide-cluster">
+    <h2>Repeating alarms</h2>
+    <p class="cluster-intro">The Clock app repeats on days of the week and nothing else, so anything measured in months, years, or intervals cannot be expressed at all. The usual workaround, the Reminders app, does support those repeats but delivers a notification rather than an alarm, which is a meaningful difference at 6 AM. These guides cover the repeats that exist, the ones that do not, and how to skip a single occurrence without dismantling the schedule.</p>
+    <div class="guide-grid">
+      <a class="guide-card" href="/guides/recurring-alarm-iphone/">
+        <h3>How to Set a Recurring Alarm on iPhone</h3>
+        <p>Most alarms are not one-offs.</p>
+        <span class="more">Read the guide</span>
+      </a>
       <a class="guide-card" href="/guides/monthly-yearly-recurring-alarm-iphone/">
         <h3>How to Set a Monthly or Yearly Recurring Alarm on iPhone</h3>
         <p>Rent on the 1st.</p>
         <span class="more">Read the guide</span>
       </a>
+      <a class="guide-card" href="/guides/skip-alarm-once-iphone/">
+        <h3>How to Skip an iPhone Alarm for One Day</h3>
+        <p>Tomorrow is a holiday, so you toggle the 6:30 alarm off.</p>
+        <span class="more">Read the guide</span>
+      </a>
+    </div>
+  </div>
+  <div class="container guide-cluster">
+    <h2>Organizing a long alarm list</h2>
+    <p class="cluster-intro">A flat list of alarms works right up until there are fifteen of them and you cannot tell which is which at a glance. Tags, groups, and colour make the list readable again, and let you switch a whole category off for a week without touching the rest.</p>
+    <div class="guide-grid">
       <a class="guide-card" href="/guides/group-organize-alarms-iphone/">
         <h3>How to Group and Organize Alarms on iPhone</h3>
         <p>Fifteen alarms in one flat list.</p>
         <span class="more">Read the guide</span>
       </a>
-      <a class="guide-card" href="/guides/skip-alarm-once-iphone/">
-        <h3>How to Skip an Alarm Once Without Turning It Off</h3>
-        <p>Tomorrow is a holiday, so you toggle the 6:30 alarm off.</p>
-        <span class="more">Read the guide</span>
-      </a>
-      <a class="guide-card" href="/guides/iphone-alarm-silent-mode/">
-        <h3>Does the iPhone Alarm Go Off on Silent Mode?</h3>
-        <p>Short version: yes for the built-in Clock app, historically no for many third-party alarm apps, and there is a notorious bug that mutes alarms that should have rung.</p>
+    </div>
+  </div>
+  <div class="container guide-cluster">
+    <h2>Sound and snooze</h2>
+    <p class="cluster-intro">Two long-standing sources of friction: getting your own audio to play as an alarm without the ringtone conversion dance, and the fixed nine-minute snooze that iOS has never made configurable.</p>
+    <div class="guide-grid">
+      <a class="guide-card" href="/guides/custom-alarm-sound-iphone/">
+        <h3>How to Set a Custom Alarm Sound on iPhone</h3>
+        <p>Waking up to a sound you chose beats waking up to Radar.</p>
         <span class="more">Read the guide</span>
       </a>
       <a class="guide-card" href="/guides/change-snooze-time-iphone/">
@@ -109,21 +197,53 @@
         <p>The 9-minute snooze ruled iPhones for nearly two decades.</p>
         <span class="more">Read the guide</span>
       </a>
-      <a class="guide-card" href="/guides/custom-alarm-sound-iphone/">
-        <h3>How to Use Your Own Sound as an iPhone Alarm</h3>
-        <p>Waking up to a sound you chose beats waking up to Radar.</p>
-        <span class="more">Read the guide</span>
-      </a>
-      <a class="guide-card" href="/guides/nap-alarm-iphone/">
-        <h3>How to Set a Quick Nap Alarm on iPhone</h3>
-        <p>It is 14:47, you have until 15:30, and the last thing your tired brain needs is arithmetic.</p>
+    </div>
+  </div>
+  <div class="container guide-cluster">
+    <h2>Will it actually ring?</h2>
+    <p class="cluster-intro">The question underneath most alarm anxiety. What Silent mode, Do Not Disturb, and Focus actually do to an alarm, and how to see at a glance that something is armed for tomorrow without unlocking the phone.</p>
+    <div class="guide-grid">
+      <a class="guide-card" href="/guides/iphone-alarm-silent-mode/">
+        <h3>Does the iPhone Alarm Go Off on Silent Mode?</h3>
+        <p>Short version: yes for the built-in Clock app, historically no for many third-party alarm apps, and there is a notorious bug that mutes alarms that should have rung.</p>
         <span class="more">Read the guide</span>
       </a>
       <a class="guide-card" href="/guides/iphone-alarm-widget-lock-screen/">
-        <h3>How to Put Your Next Alarm on the iPhone Lock Screen</h3>
+        <h3>iPhone Alarm Widget: Home Screen and Lock Screen</h3>
         <p>Half the value of an alarm app is the two-second check: is something armed for tomorrow, or not? A widget answers that without opening anything.</p>
         <span class="more">Read the guide</span>
       </a>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Can the iPhone Clock app set an alarm for a specific date?</summary>
+        <p>No. An alarm there is a time plus, optionally, days of the week, and as of iOS 26 there is still no date field. For a date inside the next 7 days you can set the matching weekday and delete the alarm after it fires. Beyond that you need Shortcuts or an alarm app built around dates. <a href="/guides/set-alarm-for-specific-date-iphone/">Read the guide</a></p>
+      </details>
+      <details>
+        <summary>Do iPhone alarms ring on Silent mode?</summary>
+        <p>Yes. Alarms are exempt from the Silent switch, and from Do Not Disturb and Focus modes. This is one of the few places iOS deliberately overrides your own settings, and it is why an alarm is not the same thing as a notification. <a href="/guides/iphone-alarm-silent-mode/">Read the guide</a></p>
+      </details>
+      <details>
+        <summary>What is the difference between an alarm and a reminder?</summary>
+        <p>A reminder is a notification: it plays a short tone at notification volume, respects Silent and Focus, and stops by itself. An alarm interrupts. For an errand at 3 PM the difference does not matter. For medication or a 4:30 start it is the whole point. <a href="/guides/recurring-alarm-iphone/">Read the guide</a></p>
+      </details>
+      <details>
+        <summary>Can you set a monthly or yearly alarm on iPhone?</summary>
+        <p>Not in the Clock app, whose only repeat unit is the weekday. The Reminders app can repeat monthly and yearly but sends a notification rather than an alarm. A dedicated alarm app can do monthly, yearly, and every-N intervals with a real alarm at the end of them. <a href="/guides/monthly-yearly-recurring-alarm-iphone/">Read the guide</a></p>
+      </details>
+      <details>
+        <summary>Can you skip one occurrence of a repeating alarm?</summary>
+        <p>The Clock app has no skip option, so the only route is switching the alarm off and remembering to switch it back on. That forgotten second step is the usual cause of oversleeping the day after a day off. <a href="/guides/skip-alarm-once-iphone/">Read the guide</a></p>
+      </details>
+      <details>
+        <summary>Is there an alarm widget for iPhone?</summary>
+        <p>Not from Apple. The built-in Clock app ships no widget, so there is nothing to add from the stock alarm. Third-party alarm apps can provide Home Screen and Lock Screen widgets showing your next alarm. <a href="/guides/iphone-alarm-widget-lock-screen/">Read the guide</a></p>
+      </details>
     </div>
   </div>
 </section>
