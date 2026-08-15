@@ -45,8 +45,8 @@
 <article class="article" style="text-align:center; padding-top: 120px; padding-bottom: 120px;">
   <img src="/assets/apple-touch-icon.png" alt="" width="72" height="72" style="border-radius:16px">
   <h1>Opening the App Store</h1>
-  <p class="lede">Alarm Clock Planner. The iPhone alarm clock for dates, not just weekdays.</p>
-  <p><a class="btn-secondary" id="manual" href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Social_YouTube&amp;mt=8">Tap here if nothing happens</a></p>
+  <p class="lede">This should take a second or two. Alarm Clock Planner, the iPhone alarm clock for dates, not just weekdays.</p>
+  <p><a class="btn-secondary" id="manual" href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Social_YouTube&amp;mt=8">Not opening? Go to the App Store</a></p>
 </article>
 </main>
 
@@ -60,11 +60,17 @@
             done = true;
             location.replace(DEST);
         }
+        // Redirect as soon as PostHog reports the event sent, and no later than the cap. The
+        // callback is not supported by every posthog build; when it never fires, the cap still
+        // redirects, so this is never slower than the old fixed wait.
         if (window.posthog && posthog.capture) {
-            posthog.capture('social_redirect', { source: SOURCE, ct: 'Social_YouTube', page: location.pathname });
+            posthog.capture('social_redirect',
+                            { source: SOURCE, ct: 'Social_YouTube', page: location.pathname },
+                            { callback: go });
         }
-        // Give the async PostHog script time to load and flush before navigating away.
-        // The meta refresh at 3s and the manual link both cover a failure here.
+        // Cap. Enough for the async PostHog script to load and flush on a slow connection.
+        // Three independent fallbacks cover a failure here: this timer, the 3s meta refresh in
+        // <head>, and the manual link above.
         setTimeout(go, 700);
     })();
 </script>
