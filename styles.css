@@ -392,4 +392,9 @@ a.article-cta:hover { text-decoration: none; }
   .compare-table.vs tbody th { white-space: normal; width: 28%; }
   .compare-table.vs td { width: 36%; }
 }
-.byline { font-size: 13.5px; color: var(--muted); margin: -4px 0 8px; }
+.fn { font-size: 0.68em; line-height: 0; margin-left: 1px; }
+.fn a { color: var(--muted); text-decoration: none; }
+.fn a:hover { color: var(--accent); }
+.footnotes { border-top: 1px solid var(--border); margin-top: 36px; padding-top: 16px; }
+.footnotes p { font-size: 12.5px; line-height: 1.55; color: var(--muted); margin: 0 0 8px; scroll-margin-top: 90px; }
+.fn-mark { display: inline-block; min-width: 2.2em; color: var(--text); }
