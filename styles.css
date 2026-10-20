@@ -404,3 +404,5 @@ a.article-cta:hover { text-decoration: none; }
 .about-box ul { margin-left: 18px; }
 .about-box li { font-size: 15px; }
 .compare-link { margin-top: 28px; padding: 12px 16px; border-radius: 12px; background: var(--panel); border: 1px solid var(--border); font-size: 15px; }
+.app-title { display: flex; align-items: center; gap: 12px; }
+.app-title .app-icon { flex: none; }
