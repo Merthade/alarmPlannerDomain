@@ -345,7 +345,11 @@ a.article-cta:hover { text-decoration: none; }
 .compare-table .stale { color: #f0726b; font-weight: 600; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
   clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-.compare-table.vs { min-width: 560px; }
+.compare-table.vs { min-width: 560px; table-layout: fixed; }
+/* Equal columns for both apps, whatever the length of either app's notes */
+.compare-table.vs thead th:first-child { width: 26%; }
+.compare-table.vs thead th:not(:first-child) { width: 37%; }
+.compare-table.vs tbody th, .compare-table.vs thead th { white-space: normal; }
 .compare-table th, .compare-table td { padding: 11px 12px; text-align: left; vertical-align: top;
   border-bottom: 1px solid var(--border); }
 .compare-table thead th { background: var(--panel-2); color: var(--text); font-weight: 600; white-space: nowrap; }
