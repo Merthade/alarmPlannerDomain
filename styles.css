@@ -329,6 +329,12 @@ a.article-cta:hover { text-decoration: none; }
 .app-head.row { flex-direction: row; align-items: center; gap: 10px; }
 .app-head:hover { text-decoration: none; }
 .app-head:hover span { text-decoration: underline; }
+.table-get { display: inline-block; padding: 7px 16px; border-radius: 999px; background: var(--accent);
+  color: #06210f; font-weight: 700; }
+.table-get:hover { text-decoration: none; filter: brightness(1.08); }
+.table-store { display: inline-block; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
+  color: var(--text); }
+.table-store:hover { text-decoration: none; background: var(--panel-2); }
 .mark { display: inline-flex; vertical-align: -3px; }
 .mark svg { width: 17px; height: 17px; }
 .mark.yes { color: var(--accent); }
