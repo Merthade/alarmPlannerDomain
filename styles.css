@@ -370,6 +370,19 @@ a.article-cta:hover { text-decoration: none; }
 .app-card-body.with-shot { display: grid; grid-template-columns: 240px 1fr; gap: 28px; align-items: start; margin: 18px 0 12px; }
 .app-card-body.with-shot figure { margin: 0; max-width: none; }
 .app-card-body.with-shot .pros-cons { grid-template-columns: 1fr; margin: 0; }
+.card-side { display: grid; gap: 16px; }
+.app-card-body:not(.with-shot) .card-side { margin: 8px 0 12px; }
+.price-card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 4px 18px 14px; }
+.price-card.ours { border-color: rgba(52, 212, 119, 0.45); background: linear-gradient(var(--accent-dim), var(--accent-dim)), var(--panel); }
+.price-card h3 { margin-top: 14px; }
+.price-tiles { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.price-tile { flex: 1 1 130px; display: flex; flex-direction: column; gap: 2px; padding: 10px 14px;
+  background: var(--panel-2); border-radius: 12px; }
+.price-label { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.price-amount { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1.25; }
+.price-card.ours .price-amount { color: var(--accent); }
+.price-unit { font-size: 13px; color: var(--muted); }
+.price-note { font-size: 13.5px; color: var(--muted); margin: 10px 0 0; }
 @media (max-width: 640px) {
   .app-card-body.with-shot { grid-template-columns: 1fr; }
   .app-card-body.with-shot figure { max-width: 240px; margin: 0 auto; }
