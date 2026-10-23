@@ -436,3 +436,5 @@ a.article-cta:hover { text-decoration: none; }
 .price-tile.none { background: rgba(240, 114, 107, 0.13); box-shadow: inset 0 0 0 1px rgba(240, 114, 107, 0.38); }
 .price-tile.none .price-amount { color: #f0726b; }
 .price-amount .times { font-size: 11.5px; vertical-align: 3px; }
+/* In tables the "× ours" badge always sits on its own line under the price */
+.compare-table .times { display: block; width: fit-content; margin: 5px 0 0; }
