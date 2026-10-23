@@ -423,3 +423,16 @@ a.article-cta:hover { text-decoration: none; }
 .sbs-none strong { font-size: 19px; }
 .sbs-none span:last-child { font-size: 13.5px; color: var(--muted); }
 @media (max-width: 640px) { .sbs-pair { gap: 12px; } }
+/* Free tiers and price badges: one set of marks for every table and price box */
+.mark.warn { color: #f2b94b; }
+.times { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 7px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.01em; line-height: 1.5; vertical-align: 2px; white-space: nowrap; background: var(--panel-2); color: var(--muted); }
+.times.more { background: rgba(240, 114, 107, 0.16); color: #f0726b; }
+.price-label { display: flex; align-items: center; gap: 4px; }
+.price-label .mark svg { width: 14px; height: 14px; }
+.price-tile.free { background: rgba(52, 212, 119, 0.16); box-shadow: inset 0 0 0 1px rgba(52, 212, 119, 0.4); }
+.price-tile.limited { background: rgba(242, 185, 75, 0.13); box-shadow: inset 0 0 0 1px rgba(242, 185, 75, 0.38); }
+.price-tile.limited .price-amount { color: #f2b94b; }
+.price-tile.none { background: rgba(240, 114, 107, 0.13); box-shadow: inset 0 0 0 1px rgba(240, 114, 107, 0.38); }
+.price-tile.none .price-amount { color: #f0726b; }
+.price-amount .times { font-size: 11.5px; vertical-align: 3px; }
