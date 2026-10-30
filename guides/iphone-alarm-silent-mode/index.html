@@ -122,7 +122,7 @@
 <p>For years, third-party alarm apps had no access to the system's alarm machinery. They faked alarms with notifications, which meant the Silent switch muted them, Focus modes filtered them, and the system could kill the app in the background. The advice "never trust a third-party alarm app" was earned.</p>
 <p>Apple changed that with AlarmKit, the framework that gives apps access to real, system-level alarm delivery. An AlarmKit alarm rings on Silent, in Do Not Disturb, and in any Focus, exactly like a Clock app alarm. <a href="/">Alarm Clock Planner</a> is built natively on AlarmKit, which is what makes date-based scheduling safe to rely on.</p>
 <figure>
-  <img class="screen" src="/assets/shot-ringing.webp?v=4ff10da0" alt="Alarm ringing full screen on an iPhone with a snooze button, ringing even on Silent mode" loading="lazy" width="640" height="1283">
+  <img class="screen" src="/assets/shot-ringing.webp?v=4ff10da0" onerror="this.onerror=null;this.src='/assets/shot-ringing.png'" alt="Alarm ringing full screen on an iPhone with a snooze button, ringing even on Silent mode" loading="lazy" width="640" height="1283">
   <figcaption>AlarmKit alarms take over the screen and ring through Silent.</figcaption>
 </figure>
 
