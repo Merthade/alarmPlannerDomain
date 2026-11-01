@@ -11,7 +11,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=8f3d446a">
+<link rel="stylesheet" href="/styles.css?v=f9a8a1c5">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alarm Clock Planner">
 <meta property="og:title" content="Alarm Clock Planner: iPhone Alarms for Any Future Date">
@@ -185,7 +185,40 @@
       </div>
     </div>
     <div class="hero-art hero-podium">
-      <img src="/assets/hero-podium.webp?v=d4a68286" onerror="this.onerror=null;this.src='/assets/hero-podium.png'" alt="Alarm Clock Planner's app icon in first place on a winners' podium, with two worn-out old alarm clocks on the lower steps" width="1536" height="1152" fetchpriority="high">
+      <svg class="podium" viewBox="24 36 512 386" role="img" aria-labelledby="podium-t">
+        <title id="podium-t">Alarm Clock Planner's app icon in first place on a podium, two plain old alarm clock icons knocked over on the lower steps</title>
+        <defs>
+          <linearGradient id="pd-face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2a40"/><stop offset="1" stop-color="#121b2b"/></linearGradient>
+        </defs>
+        <ellipse cx="280" cy="404" rx="250" ry="14" fill="#000" opacity=".28"/>
+        <!-- steps: 2nd left, 1st middle, 3rd right -->
+        <rect x="40" y="292" width="166" height="112" rx="6" fill="url(#pd-face)"/>
+        <rect x="197" y="236" width="166" height="168" rx="6" fill="url(#pd-face)"/>
+        <rect x="354" y="320" width="166" height="84" rx="6" fill="url(#pd-face)"/>
+        <rect x="40" y="292" width="166" height="5" rx="2.5" fill="#34d477" opacity=".55"/>
+        <rect x="197" y="236" width="166" height="5" rx="2.5" fill="#34d477"/>
+        <rect x="354" y="320" width="166" height="5" rx="2.5" fill="#34d477" opacity=".4"/>
+        <g font-family="-apple-system,BlinkMacSystemFont,Inter,sans-serif" font-weight="800" text-anchor="middle" fill="#9aa6bf" opacity=".55">
+          <text x="123" y="364" font-size="40">2</text><text x="280" y="336" font-size="54" fill="#34d477" opacity="1">1</text><text x="437" y="378" font-size="34">3</text>
+        </g>
+        <!-- 1st: the real app icon -->
+        <ellipse cx="280" cy="233" rx="62" ry="6" fill="#000" opacity=".35"/>
+        <g class="pd-win"><image href="/assets/icon-512.png" x="203" y="78" width="154" height="154"/>
+          <path d="M254 70l9-22 17 15 17-15 9 22z" fill="#f5b301" stroke="#d99a00" stroke-width="2.5" stroke-linejoin="round"/></g>
+        <!-- 2nd: a plain red bell clock icon, knocked over -->
+        <g transform="translate(122 234) rotate(-35)">
+          <rect x="-44" y="-44" width="88" height="88" rx="20" fill="#d9534f"/>
+          <circle cx="-17" cy="-24" r="10" fill="#fff"/><circle cx="17" cy="-24" r="10" fill="#fff"/>
+          <circle cx="0" cy="4" r="25" fill="#fff"/><circle cx="0" cy="4" r="20" fill="#f6f6f6" stroke="#333" stroke-width="2"/>
+          <path d="M0 4V-8M0 4l9 6" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <!-- 3rd: a plain grey clock icon, flat on its back -->
+        <g transform="translate(432 267) rotate(38)">
+          <rect x="-40" y="-40" width="80" height="80" rx="18" fill="#6b7385"/>
+          <circle cx="0" cy="0" r="27" fill="#eef0f4"/>
+          <path d="M0 0V-16M0 0h12" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+        </g>
+      </svg>
       <p class="podium-tag">It's time for an alarm regime change.</p>
     </div>
   </div>

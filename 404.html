@@ -11,7 +11,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=8f3d446a">
+<link rel="stylesheet" href="/styles.css?v=f9a8a1c5">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Alarm Clock Planner">
 <meta property="og:title" content="Page Not Found | Alarm Clock Planner">
@@ -59,10 +59,19 @@
 
 <main>
 <article class="article" style="text-align:center; padding-top: 60px; padding-bottom: 90px;">
-  <figure class="ap-hero" style="max-width:640px;margin:0 auto 18px"><img src="/assets/404-lost-alarm.webp?v=33e91228" onerror="this.onerror=null;this.src='/assets/404-lost-alarm.png'" alt="A cartoon alarm clock app icon ringing and bouncing toward an open door that leads to nothing but stars" width="1536" height="864" style="width:100%;height:auto;border-radius:18px"></figure>
+  <div class="e404-art" aria-hidden="true"><svg viewBox="0 0 240 200" width="240" height="200">
+    <g class="e404-wv" fill="none" stroke="#34d477" stroke-width="5" stroke-linecap="round"><path d="M48 62q-16 38 0 76"/><path d="M192 62q16 38 0 76"/></g>
+    <g class="e404-wv b" fill="none" stroke="#34d477" stroke-width="4" stroke-linecap="round" opacity=".6"><path d="M30 48q-24 52 0 104"/><path d="M210 48q24 52 0 104"/></g>
+    <g class="e404-ic"><image href="/assets/icon-512.png" x="60" y="40" width="120" height="120"/></g>
+  </svg></div>
+  <style>.e404-art{display:flex;justify-content:center;margin:0 0 10px}.e404-ic{transform-box:fill-box;transform-origin:center;animation:e404Buzz .09s linear infinite alternate}
+  .e404-wv{animation:e404Wave 1s ease-out infinite;transform-box:fill-box;transform-origin:center}.e404-wv.b{animation-delay:.5s}
+  @keyframes e404Buzz{0%{transform:rotate(-4deg) translateX(-1.5px)}100%{transform:rotate(4deg) translateX(1.5px)}}
+  @keyframes e404Wave{0%{opacity:.9;transform:scale(.94)}100%{opacity:0;transform:scale(1.15)}}
+  @media (prefers-reduced-motion:reduce){.e404-ic,.e404-wv{animation:none}}</style>
   <h1>This alarm rang for a page that doesn't exist</h1>
-  <p class="lede">It moved, or it was never set. Dismiss it and head somewhere real.</p>
-  <p><a class="btn-secondary" href="/">Dismiss</a>&nbsp;&nbsp;<a class="btn-secondary" href="/guides/">Snooze into the guides</a></p>
+  <p class="lede">It moved, or it was never set.</p>
+  <p><a class="btn-secondary" href="/">Back to the homepage</a>&nbsp;&nbsp;<a class="btn-secondary" href="/guides/">Browse the guides</a></p>
 </article>
 </main>
 

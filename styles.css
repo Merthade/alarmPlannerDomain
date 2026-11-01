@@ -456,7 +456,10 @@ a.article-cta:hover { text-decoration: none; }
 .feature-card:has(h3 a):hover{border-color:rgba(52,212,119,.55)}
 
 /* Hero podium (2026-11-01): the app icon in first place; replaces the hero screenshot */
-.hero-podium{display:flex;flex-direction:column;align-items:center}
-.hero-podium img{width:100%;max-width:560px;height:auto;border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 1px rgba(52,212,119,.18)}
+.hero-podium{display:flex;flex-direction:column;align-items:center;width:100%}
+.hero-podium .podium{width:min(540px,100%);height:auto;overflow:visible}
+.hero-podium .pd-win{transform-box:fill-box;transform-origin:50% 100%;animation:pdBob 2.6s ease-in-out infinite}
+@keyframes pdBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.hero-podium .pd-win{animation:none}}
 .hero-podium .podium-tag{margin:14px 0 0;color:#34d477;font:400 24px/1.2 "Bradley Hand","Segoe Print","Comic Sans MS",cursive;transform:rotate(-2deg)}
 .footer-night{opacity:.7;font-style:italic}
