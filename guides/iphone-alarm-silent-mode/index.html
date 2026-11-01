@@ -248,5 +248,101 @@ new IntersectionObserver(function(es){var e=es[0];f.classList.toggle('on',!e.isI
         }
     });
 </script>
+<script>
+// A ringing iPhone peeks in from a random edge or corner, buzzes for a moment, and slides away.
+// Decoration only: pointer-events none, hidden from screen readers, off for prefers-reduced-motion,
+// only on screens wide enough to have margins beside the content, paused while the tab is hidden.
+// Inlined into every page by gen_guides.py (RING_JS); ?ring=demo makes it ring every 2.5 s.
+(function () {
+  if (!window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var demo = /[?&]ring=demo\b/.test(location.search);
+  var hold = demo && /[?&]hold=(\d)/.exec(location.search);   // ?ring=demo&hold=N: park at spot N, buzzing
+
+  var css = '' +
+    '.rp{position:fixed;z-index:30;width:108px;height:222px;pointer-events:none;will-change:transform}' +
+    '.rp svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 14px rgba(52,212,119,.35)) drop-shadow(0 10px 24px rgba(0,0,0,.5))}' +
+    '.rp .ph{transform-box:fill-box;transform-origin:center}' +
+    '.rp .wv{opacity:0;transform-origin:39px 80px}' +
+    '.rp.buzz .ph{animation:rpBuzz .09s linear infinite alternate}' +
+    '.rp.buzz .wv{animation:rpWave .55s ease-out infinite}' +
+    '.rp.buzz .wv.b{animation-delay:.27s}' +
+    '.rp.buzz .glow{animation:rpGlow .55s ease-in-out infinite alternate}' +
+    '@keyframes rpBuzz{0%{transform:translate(-1.6px,0) rotate(-3deg)}100%{transform:translate(1.6px,0) rotate(3deg)}}' +
+    '@keyframes rpWave{0%{opacity:.95;transform:scale(.92)}100%{opacity:0;transform:scale(1.22)}}' +
+    '@keyframes rpGlow{0%{opacity:.35}100%{opacity:.9}}';
+  var phone = '' +
+    '<svg viewBox="0 0 78 160" aria-hidden="true" focusable="false">' +
+    // ring lines on both sides, drawn as arcs
+    '<g class="wv" fill="none" stroke="#34d477" stroke-width="3.6" stroke-linecap="round">' +
+    '<path d="M-4 62q-8 18 0 36"/><path d="M82 62q8 18 0 36"/></g>' +
+    '<g class="wv b" fill="none" stroke="#34d477" stroke-width="3" stroke-linecap="round">' +
+    '<path d="M-13 54q-12 26 0 52"/><path d="M91 54q12 26 0 52"/></g>' +
+    '<g class="ph">' +
+    '<rect x="3" y="3" width="72" height="154" rx="15" fill="#2b3447" stroke="#9aa6bf" stroke-width="2.2"/>' +
+    '<rect x="7" y="7" width="64" height="146" rx="11.5" fill="#13213a"/>' +
+    '<rect x="28" y="12" width="22" height="6.5" rx="3.25" fill="#000"/>' +                 // Dynamic Island
+    '<circle class="glow" cx="39" cy="62" r="20" fill="#34d477" opacity=".35"/>' +
+    '<circle cx="39" cy="62" r="13.5" fill="#34d477"/>' +
+    // bell
+    '<path d="M39 53.5c-3.9 0-6.4 2.9-6.4 6.6v4.1l-2.1 3.2h17l-2.1-3.2v-4.1c0-3.7-2.5-6.6-6.4-6.6z" fill="#0b1120"/>' +
+    '<circle cx="39" cy="69.6" r="1.9" fill="#0b1120"/>' +
+    '<text x="39" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Inter,sans-serif" font-size="17" font-weight="700" fill="#fff">7:00</text>' +
+    '<rect x="15" y="126" width="48" height="13" rx="6.5" fill="#34d477" opacity=".9"/>' +  // the stop button
+    '<rect x="29" y="146" width="20" height="2.5" rx="1.25" fill="#3a4560"/>' +
+    '</g></svg>';
+
+  // Where it can appear. Each spot: how to place it fixed, its rotation (top of the phone points into the page),
+  // and the direction it slides in from.
+  function spots() {
+    var y = function () { return Math.round(innerHeight * (0.25 + Math.random() * 0.5) - 111); };
+    return [
+      { pos: { left: '0px', top: y() + 'px' }, rot: 90, from: [-1, 0], peek: 0.72 },
+      { pos: { right: '0px', top: y() + 'px' }, rot: -90, from: [1, 0], peek: 0.72 },
+      { pos: { left: '0px', top: '70px' }, rot: 135, from: [-1, -1], peek: 0.7 },
+      { pos: { right: '0px', top: '70px' }, rot: -135, from: [1, -1], peek: 0.7 },
+      { pos: { left: '0px', bottom: '0px' }, rot: 45, from: [-1, 1], peek: 0.7 },
+      { pos: { right: '0px', bottom: '0px' }, rot: -45, from: [1, 1], peek: 0.7 }
+    ];
+  }
+
+  var last = -1, busy = false;
+  function ring() {
+    if (busy || document.hidden || innerWidth < 1000) return schedule();
+    var all = spots(), i;
+    if (hold) i = +hold[1];
+    else do { i = Math.floor(Math.random() * all.length); } while (i === last && all.length > 1);
+    last = i;
+    var s = all[i], el = document.createElement('div');
+    el.className = 'rp';
+    el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = phone;
+    for (var k in s.pos) el.style[k] = s.pos[k];
+    document.body.appendChild(el);
+    busy = true;
+    // Off-screen start, then a peek: the phone sits with part of it past the edge.
+    var H = 222, out = 'translate(' + (s.from[0] * 200) + 'px,' + (s.from[1] * 200) + 'px) rotate(' + s.rot + 'deg)';
+    var inn = 'translate(' + (s.from[0] * H * (1 - s.peek) * 0.45) + 'px,' + (s.from[1] * H * (1 - s.peek) * 0.45) + 'px) rotate(' + s.rot + 'deg)';
+    el.animate([{ transform: out }, { transform: inn }], { duration: 380, easing: 'cubic-bezier(.2,.9,.3,1.25)', fill: 'forwards' })
+      .onfinish = function () {
+        el.classList.add('buzz');
+        if (hold) return;
+        setTimeout(function () {
+          el.classList.remove('buzz');
+          el.animate([{ transform: inn }, { transform: out }], { duration: 300, easing: 'cubic-bezier(.5,0,.8,.4)', fill: 'forwards' })
+            .onfinish = function () { el.remove(); busy = false; schedule(); };
+        }, 900);
+      };
+  }
+  function schedule() { setTimeout(ring, demo ? 2500 : 7000 + Math.random() * 7000); }
+
+  function start() {
+    var st = document.createElement('style');
+    st.textContent = css;
+    document.head.appendChild(st);
+    setTimeout(ring, demo ? 600 : 3500);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
+</script>
 </body>
 </html>
