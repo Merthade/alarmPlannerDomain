@@ -463,3 +463,25 @@ a.article-cta:hover { text-decoration: none; }
 @media (prefers-reduced-motion:reduce){.hero-podium .pd-win{animation:none}}
 .hero-podium .podium-tag{margin:14px 0 0;color:#34d477;font:400 24px/1.2 "Bradley Hand","Segoe Print","Comic Sans MS",cursive;transform:rotate(-2deg)}
 .footer-night{opacity:.7;font-style:italic}
+
+/* Hero v2 (2026-11-01): slogan headline, guide-style QR card, podium centred, highlights as a full-width strip */
+.hero { padding: 64px 0 28px; }
+@media (min-width: 861px) { .hero-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+@media (max-width: 860px) { .hero-podium .podium { width: min(420px, 100%); margin-top: 8px; } }
+.hero-copy h1 { font-size: clamp(36px, 4.6vw, 56px); margin-bottom: 16px; }
+.hero-copy .hero-sub { font-size: 20px; margin-bottom: 26px; max-width: 26em; }
+.hero-copy .cta-row { gap: 16px; align-items: center; }
+.hero-qr { display: none; width: auto; max-width: 330px; padding: 10px 14px 10px 10px; gap: 12px; align-items: center; text-align: left; border-radius: 14px;
+  border: 1px solid rgba(52, 212, 119, .3); background: rgba(52, 212, 119, .06); }
+.hero-qr img { width: 84px; height: 84px; flex: none; border-radius: 9px; background: #fff; padding: 6px; box-sizing: border-box; }
+.hero-qr .t { display: block; font-weight: 700; line-height: 1.25; }
+.hero-qr .s { display: block; margin-top: 3px; font-size: 13.5px; line-height: 1.4; color: var(--muted); }
+.hero-qr .ap-sms { display: inline-block; margin-top: 6px; font-size: 13.5px; font-weight: 600; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 900px) and (hover: hover) and (pointer: fine) { .hero-qr { display: flex; } }
+.hero-podium .podium { width: min(600px, 100%); }
+.trust-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 22px 0; margin-top: 8px;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); color: var(--muted); font-size: 15px; text-align: center; }
+.trust-strip span::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+@media (max-width: 700px) { .trust-strip { grid-template-columns: 1fr 1fr; text-align: left; } }
+.hero-sub .accent { color: var(--accent); font-weight: 600; }
+.hero-qr { max-width: 300px; }

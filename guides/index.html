@@ -11,7 +11,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=f9a8a1c5">
+<link rel="stylesheet" href="/styles.css?v=4d26598a">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Alarm Clock Planner">
 <meta property="og:title" content="iPhone Alarm Guides: Dates, Repeats, Groups and More">
@@ -499,7 +499,6 @@
     // ---------- 2. hand-drawn notes ----------
     // [selector, text, side]: side is where the note sits; the arrow points from it to the element.
     var NOTES = [
-      ['.hero h1 .accent', 'yes, even next year', 'above'],
       ['.hero .ap-rating', 'real ones, too', 'right'],
       ['#features .section-head h2', 'tap a card for the full story', 'above', '.feature-card h3 a'],
       ['.article .ap-get', 'free to download, no account', 'left'],
@@ -545,6 +544,19 @@
       } else el.classList.add('in');
     });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { notes.forEach(pos); });
+
+    // ---------- homepage QR card: 'text me the link' only works on a Mac; elsewhere it copies the link ----------
+    var sms = document.querySelector('.hero-qr .ap-sms');
+    if (sms && !/Mac/.test(navigator.platform || navigator.userAgent)) {
+      sms.textContent = 'or copy the link';
+      sms.addEventListener('click', function (e) {
+        e.preventDefault();
+        var url = sms.getAttribute('data-copy');
+        (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () {
+          sms.textContent = 'Copied'; setTimeout(function () { sms.textContent = 'or copy the link'; }, 1600);
+        }, function () { prompt('Copy this link:', url); });
+      });
+    }
 
     // ---------- 3. time-aware lines ----------
     var d = new Date(), hh = d.getHours();
