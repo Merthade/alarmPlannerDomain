@@ -29,6 +29,7 @@
   <url><loc>https://alarmclockplanner.com/compare/alarm-clock-planner-vs-wayk/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/compare/alarm-clock-planner-vs-one-touch-alarm-clock/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/features/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/features/date-alarms/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/features/icloud-backup/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/whats-new/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/about/</loc><lastmod>2026-11-01</lastmod></url>
@@ -61,6 +62,7 @@
   <url><loc>https://alarmclockplanner.com/de/compare/alarm-clock-planner-vs-wayk/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/de/compare/alarm-clock-planner-vs-one-touch-alarm-clock/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/de/features/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/de/features/date-alarms/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/de/features/icloud-backup/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/de/whats-new/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/de/about/</loc><lastmod>2026-11-01</lastmod></url>
@@ -93,6 +95,7 @@
   <url><loc>https://alarmclockplanner.com/es/compare/alarm-clock-planner-vs-wayk/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/es/compare/alarm-clock-planner-vs-one-touch-alarm-clock/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/es/features/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/es/features/date-alarms/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/es/features/icloud-backup/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/es/whats-new/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/es/about/</loc><lastmod>2026-11-01</lastmod></url>
@@ -125,6 +128,7 @@
   <url><loc>https://alarmclockplanner.com/fr/compare/alarm-clock-planner-vs-wayk/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/fr/compare/alarm-clock-planner-vs-one-touch-alarm-clock/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/fr/features/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/fr/features/date-alarms/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/fr/features/icloud-backup/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/fr/whats-new/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/fr/about/</loc><lastmod>2026-11-01</lastmod></url>
@@ -157,9 +161,43 @@
   <url><loc>https://alarmclockplanner.com/it/compare/alarm-clock-planner-vs-wayk/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/it/compare/alarm-clock-planner-vs-one-touch-alarm-clock/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/it/features/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/it/features/date-alarms/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/it/features/icloud-backup/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/it/whats-new/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/it/about/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/it/tools/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://alarmclockplanner.com/it/tools/nap-calculator/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/set-alarm-for-specific-date-iphone/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/alarm-for-a-flight/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/recurring-alarm-iphone/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/monthly-yearly-recurring-alarm-iphone/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/group-organize-alarms-iphone/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/skip-alarm-once-iphone/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/iphone-alarm-silent-mode/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/change-snooze-time-iphone/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/custom-alarm-sound-iphone/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/itunes-song-as-alarm-iphone/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/nap-alarm-iphone/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/guides/iphone-alarm-widget-lock-screen/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/support/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/alarm-clock-planner-vs-iphone-clock/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/alarm-clock-planner-vs-galarm/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/alarm-clock-planner-vs-alarmy/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/alarm-clock-planner-vs-sleep-cycle/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/alarm-clock-planner-vs-datealarm/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/alarm-clock-planner-vs-alarm-clock-for-me/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/alarm-clock-planner-vs-alarm-clock-hd/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/alarm-clock-planner-vs-loud-alarm-clock/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/alarm-clock-planner-vs-wayk/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/compare/alarm-clock-planner-vs-one-touch-alarm-clock/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/features/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/features/date-alarms/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/features/icloud-backup/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/whats-new/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/about/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/tools/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alarmclockplanner.com/pt-br/tools/nap-calculator/</loc><lastmod>2026-11-01</lastmod></url>
 </urlset>
