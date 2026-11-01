@@ -428,7 +428,7 @@ a.article-cta:hover { text-decoration: none; }
 .sbs-pair figure { margin: 0; max-width: none; }
 .sbs-pair figcaption { font-size: 12.5px; }
 .sbs-none { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center;
-  aspect-ratio: 640 / 1283; padding: 16px; border-radius: 14px; border: 1px solid rgba(52, 212, 119, 0.45);
+  aspect-ratio: 640 / 1306; padding: 16px; border-radius: 14px; border: 1px solid rgba(52, 212, 119, 0.45);
   background: linear-gradient(var(--accent-dim), var(--accent-dim)), var(--panel); }
 .sbs-none strong { font-size: 19px; }
 .sbs-none span:last-child { font-size: 13.5px; color: var(--muted); }
