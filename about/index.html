@@ -11,7 +11,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=4d26598a">
+<link rel="stylesheet" href="/styles.css?v=46f7fef1">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Alarm Clock Planner">
 <meta property="og:title" content="About Alarm Clock Planner and Its Developer">
@@ -121,33 +121,38 @@
 </article>
 </main>
 
-<footer class="site-footer">
+<style>
+.sf{border-top:1px solid var(--border,rgba(127,127,127,.22));padding:44px 0 34px;font-size:14px;color:var(--muted,#9aa6bf)}
+.sf a{color:var(--muted,#9aa6bf);text-decoration:none}.sf a:hover{color:var(--text,#fff);text-decoration:none}
+.sf-brand{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-bottom:22px}
+.sf-name{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--text,#fff)}
+.sf-name img{width:30px;height:30px;border-radius:8px}
+.sf-note{margin:0;font-size:13px;line-height:1.5}
+.sf-dl{margin-left:auto;padding:10px 16px;border-radius:10px;font-weight:700;font-size:13px;letter-spacing:.03em;text-transform:uppercase;
+  background:var(--accent,#34d477);color:var(--ap-on-accent,#06210f)!important}
+.sf-dl:hover{filter:brightness(1.06)}
+.sf-main{display:flex;flex-wrap:wrap;gap:8px 22px;padding-bottom:20px;border-bottom:1px solid var(--border,rgba(127,127,127,.22))}
+.sf-main a{color:var(--text,#fff);opacity:.85}.sf-main a:hover{opacity:1}
+.sf-sec{padding:18px 0;border-bottom:1px solid var(--border,rgba(127,127,127,.22))}
+.sf-sec:last-of-type{border-bottom:0}
+.sf-label{display:block;margin-bottom:10px;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text,#fff);opacity:.7}
+.sf-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px 18px;line-height:1.4}
+.sf-grid .off{opacity:.45;cursor:default}
+.sf-grid .on{color:var(--text,#fff)}
+.sf-legal{margin:18px 0 0;font-size:12px;opacity:.7}
+@media (max-width:900px){.sf-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.sf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sf-dl{margin-left:0}}
+</style>
+<footer class="site-footer sf">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">
-          <img src="/assets/apple-touch-icon.png?v=e79105dc" alt="" width="30" height="30">
-          Alarm Clock Planner
-        </div>
-        <p class="footer-note">The iPhone alarm clock for dates, not just weekdays.<br>Requires iOS 26.2 or later.</p>
-        <p class="footer-note footer-night">Made at night by one developer, between 21:00 and midnight.</p>
-      </div>
-      <div class="footer-links">
-        <a href="/guides/">Guides</a>
-        <a href="/compare/">Compare</a>
-        <a href="/tools/nap-calculator/">Nap calculator</a>
-        <a href="/whats-new/">What's New</a>
-        <a href="/about/">About</a>
-        <a href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_Home&amp;mt=8" data-ph="appstore_click">App Store</a>
-        <a href="/support/">Support</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-        <a href="https://ozols.dev" rel="author">Made by Emils Ozols</a>
-      </div>
+    <div class="sf-brand">
+      <div class="sf-name"><img src="/assets/apple-touch-icon.png?v=e79105dc" alt="" width="30" height="30">Alarm Clock Planner</div>
+      <p class="sf-note">The iPhone alarm clock for dates, not just weekdays. Requires iOS 26.2 or later.<br>Made at night by one developer, between 21:00 and midnight.</p>
+      <a class="sf-dl" href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_Home&amp;mt=8" data-ph="appstore_click">Download on the App Store</a>
     </div>
-    <!--ap-feat--><!--/ap-feat-->
-    <p class="footer-more">More apps by Emils Ozols: <a href="https://remireminder.app/" data-ph="crosssell_remi">Remi someday reminders</a> &middot; <a href="https://risemorning.app/" data-ph="crosssell_rise">Rise morning routine</a> &middot; <a href="https://getscooch.com/" data-ph="crosssell_scooch">Scooch room planner</a> &middot; <a href="https://getcharactersheet.com/" data-ph="crosssell_charactersheet">CharacterSheet fitness RPG</a> &middot; <a href="https://getchoru.com/" data-ph="crosssell_choru">Choru chore chart</a></p>
-    <p class="footer-note">© Emils Ozols. Apple, iPhone, and the App Store badge are trademarks of Apple Inc.</p>
+    <div class="sf-main" role="navigation" aria-label="Footer"><a href="/guides/">Guides</a><a href="/compare/">Compare</a><a href="/tools/nap-calculator/">Nap calculator</a><a href="/whats-new/">What's New</a><a href="/about/">About</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+    <div class="sf-sec"><span class="sf-label">Compare</span><div class="sf-grid"><a href="/compare/alarm-clock-planner-vs-iphone-clock/">vs Clock (built into iPhone)</a><a href="/compare/alarm-clock-planner-vs-galarm/">vs Galarm</a><a href="/compare/alarm-clock-planner-vs-alarmy/">vs Alarmy</a><a href="/compare/alarm-clock-planner-vs-sleep-cycle/">vs Sleep Cycle</a><a href="/compare/alarm-clock-planner-vs-datealarm/">vs DateAlarm</a><a href="/compare/alarm-clock-planner-vs-alarm-clock-for-me/">vs Alarm Clock for Me</a><a href="/compare/alarm-clock-planner-vs-alarm-clock-hd/">vs Alarm Clock HD</a><a href="/compare/alarm-clock-planner-vs-loud-alarm-clock/">vs Loud Alarm Clock</a><a href="/compare/alarm-clock-planner-vs-wayk/">vs Wayk</a><a href="/compare/alarm-clock-planner-vs-one-touch-alarm-clock/">vs One Touch Alarm Clock</a><a href="/compare/">All alarm apps compared</a></div></div><div class="sf-sec"><span class="sf-label">More apps by the same developer</span><div class="sf-grid"><a href="https://remireminder.app/">Remi someday reminders</a><a href="https://risemorning.app/">Rise morning routine</a><a href="https://getscooch.com/">Scooch room planner</a><a href="https://getcharactersheet.com/">CharacterSheet fitness RPG</a><a href="https://getchoru.com/">Choru chore chart</a></div></div><div class="sf-sec"><span class="sf-label">Language</span><div class="sf-grid"><span class="on" lang="en">English</span><span class="off" lang="ar" title="Coming soon">العربية</span><span class="off" lang="da" title="Coming soon">Dansk</span><span class="off" lang="de" title="Coming soon">Deutsch</span><span class="off" lang="es" title="Coming soon">Español</span><span class="off" lang="et" title="Coming soon">Eesti</span><span class="off" lang="fi" title="Coming soon">Suomi</span><span class="off" lang="fr" title="Coming soon">Français</span><span class="off" lang="id" title="Coming soon">Bahasa Indonesia</span><span class="off" lang="it" title="Coming soon">Italiano</span><span class="off" lang="ja" title="Coming soon">日本語</span><span class="off" lang="ko" title="Coming soon">한국어</span><span class="off" lang="lv" title="Coming soon">Latviešu</span><span class="off" lang="nb" title="Coming soon">Norsk</span><span class="off" lang="nl" title="Coming soon">Nederlands</span><span class="off" lang="pl" title="Coming soon">Polski</span><span class="off" lang="pt-BR" title="Coming soon">Português (Brasil)</span><span class="off" lang="sv" title="Coming soon">Svenska</span><span class="off" lang="zh-Hant" title="Coming soon">繁體中文</span></div></div>
+    <p class="sf-legal">© <a href="https://ozols.dev" rel="author">Emils Ozols</a>. Apple, iPhone, and the App Store badge are trademarks of Apple Inc.</p>
   </div>
 </footer>
 <script>
