@@ -155,6 +155,11 @@
 
 
 
+
+
+
+
+
 <link rel="alternate" hreflang="en" href="https://alarmclockplanner.com/"><link rel="alternate" hreflang="de" href="https://alarmclockplanner.com/de/"><link rel="alternate" hreflang="es" href="https://alarmclockplanner.com/es/"><link rel="alternate" hreflang="fr" href="https://alarmclockplanner.com/fr/"><link rel="alternate" hreflang="it" href="https://alarmclockplanner.com/it/"><link rel="alternate" hreflang="pt-BR" href="https://alarmclockplanner.com/pt-br/"><link rel="alternate" hreflang="x-default" href="https://alarmclockplanner.com/">
 </head>
 <body>
@@ -303,7 +308,7 @@
       </div>
       <div class="feature-card">
         <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div>
-        <h3>One-tap nap</h3>
+        <h3><a href="/features/nap-alarms/">One-tap nap</a></h3>
         <p>Hold the add button for instant 10, 15, 20, or 30 minute naps, or nap until the next full hour.</p>
       </div>
       <div class="feature-card">
@@ -605,15 +610,16 @@
   background:var(--accent,#34d477);color:var(--ap-on-accent,#06210f)!important}
 .sf-dl:hover{filter:brightness(1.06)}
 .sf-main{display:flex;flex-wrap:wrap;gap:8px 22px;padding-bottom:20px;border-bottom:1px solid var(--border,rgba(127,127,127,.22))}
-.sf-main a{color:var(--text,#fff);opacity:.85}.sf-main a:hover{opacity:1}
+.sf-main a{color:var(--accent,#34d477);font-size:14.5px}.sf-main a:hover{color:var(--text,#fff)}
+.sf a.cur{color:var(--accent,#34d477);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
 .sf-sec{padding:18px 0;border-bottom:1px solid var(--border,rgba(127,127,127,.22))}
 .sf-sec:last-of-type{border-bottom:0}
-.sf-label{display:block;margin-bottom:10px;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text,#fff);opacity:.7}
+.sf-label{display:block;margin-bottom:12px;font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--text,#fff)}
 .sf-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px 18px;line-height:1.4}
 .sf-grid>a,.sf-grid>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sf-note{white-space:nowrap}
-.sf-grid .off{opacity:.45;cursor:default}
-.sf-grid .on{color:var(--text,#fff)}
+.sf-grid>a{color:var(--muted,#9aa6bf);opacity:.8}.sf-grid>a:hover{opacity:1;color:var(--text,#fff)}
+.sf-grid .on{color:var(--accent,#34d477);font-weight:700}
 .sf-legal{margin:18px 0 0;font-size:12px;opacity:.7}
 @media (max-width:900px){.sf-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.sf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sf-dl{margin-left:0}}
@@ -626,9 +632,10 @@
       <a class="sf-dl" href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_Home&amp;mt=8" data-ph="appstore_click">Download on the App Store</a>
     </div>
     <div class="sf-main" role="navigation" aria-label="Footer"><a href="/features/">Features</a><a href="/guides/">Guides</a><a href="/compare/">Compare</a><a href="/tools/nap-calculator/">Nap calculator</a><a href="/whats-new/">What's New</a><a href="/about/">About</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
-    <div class="sf-sec"><span class="sf-label">Features</span><div class="sf-grid"><a href="/features/date-alarms/">Date alarms</a><a href="/features/alarm-groups/">Alarm groups</a><a href="/features/calendar-view/">Calendar view</a><a href="/features/custom-sounds/">Custom sounds</a><a href="/features/icloud-backup/">iCloud backup</a></div></div><div class="sf-sec"><span class="sf-label">Compare</span><div class="sf-grid"><a href="/compare/alarm-clock-planner-vs-iphone-clock/">vs Clock</a><a href="/compare/alarm-clock-planner-vs-galarm/">vs Galarm</a><a href="/compare/alarm-clock-planner-vs-alarmy/">vs Alarmy</a><a href="/compare/alarm-clock-planner-vs-sleep-cycle/">vs Sleep Cycle</a><a href="/compare/alarm-clock-planner-vs-datealarm/">vs DateAlarm</a><a href="/compare/alarm-clock-planner-vs-alarm-clock-for-me/">vs Alarm Clock for Me</a><a href="/compare/alarm-clock-planner-vs-alarm-clock-hd/">vs Alarm Clock HD</a><a href="/compare/alarm-clock-planner-vs-loud-alarm-clock/">vs Loud Alarm Clock</a><a href="/compare/alarm-clock-planner-vs-wayk/">vs Wayk</a><a href="/compare/alarm-clock-planner-vs-one-touch-alarm-clock/">vs One Touch</a><a href="/compare/">All compared</a></div></div><div class="sf-sec"><span class="sf-label">More apps by the same developer</span><div class="sf-grid"><a href="https://remireminder.app/">Remi</a><a href="https://risemorning.app/">Rise</a><a href="https://getscooch.com/">Scooch</a><a href="https://getcharactersheet.com/">CharacterSheet</a><a href="https://getchoru.com/">Choru</a></div></div><div class="sf-sec"><span class="sf-label">Language</span><div class="sf-grid"><span class="on" lang="en">English</span><span class="off" lang="ar" title="Coming soon">العربية</span><span class="off" lang="da" title="Coming soon">Dansk</span><a href="/de/" lang="de" hreflang="de">Deutsch</a><a href="/es/" lang="es" hreflang="es">Español</a><span class="off" lang="et" title="Coming soon">Eesti</span><span class="off" lang="fi" title="Coming soon">Suomi</span><a href="/fr/" lang="fr" hreflang="fr">Français</a><span class="off" lang="id" title="Coming soon">Bahasa Indonesia</span><a href="/it/" lang="it" hreflang="it">Italiano</a><span class="off" lang="ja" title="Coming soon">日本語</span><span class="off" lang="ko" title="Coming soon">한국어</span><span class="off" lang="lv" title="Coming soon">Latviešu</span><span class="off" lang="nb" title="Coming soon">Norsk</span><span class="off" lang="nl" title="Coming soon">Nederlands</span><span class="off" lang="pl" title="Coming soon">Polski</span><a href="/pt-br/" lang="pt-BR" hreflang="pt-BR">Português (Brasil)</a><span class="off" lang="sv" title="Coming soon">Svenska</span><span class="off" lang="zh-Hant" title="Coming soon">繁體中文</span></div></div>
+    <div class="sf-sec"><span class="sf-label">Features</span><div class="sf-grid"><a href="/features/date-alarms/">Date alarms</a><a href="/features/alarm-groups/">Alarm groups</a><a href="/features/calendar-view/">Calendar view</a><a href="/features/custom-sounds/">Custom sounds</a><a href="/features/nap-alarms/">Nap alarms</a><a href="/features/icloud-backup/">iCloud backup</a></div></div><div class="sf-sec"><span class="sf-label">Compare</span><div class="sf-grid"><a href="/compare/alarm-clock-planner-vs-iphone-clock/">vs Clock</a><a href="/compare/alarm-clock-planner-vs-galarm/">vs Galarm</a><a href="/compare/alarm-clock-planner-vs-alarmy/">vs Alarmy</a><a href="/compare/alarm-clock-planner-vs-sleep-cycle/">vs Sleep Cycle</a><a href="/compare/alarm-clock-planner-vs-datealarm/">vs DateAlarm</a><a href="/compare/alarm-clock-planner-vs-alarm-clock-for-me/">vs Alarm Clock for Me</a><a href="/compare/alarm-clock-planner-vs-alarm-clock-hd/">vs Alarm Clock HD</a><a href="/compare/alarm-clock-planner-vs-loud-alarm-clock/">vs Loud Alarm Clock</a><a href="/compare/alarm-clock-planner-vs-wayk/">vs Wayk</a><a href="/compare/alarm-clock-planner-vs-one-touch-alarm-clock/">vs One Touch</a><a href="/compare/">All compared</a></div></div><div class="sf-sec"><span class="sf-label">More apps by the same developer</span><div class="sf-grid"><a href="https://remireminder.app/">Remi</a><a href="https://risemorning.app/">Rise</a><a href="https://getscooch.com/">Scooch</a><a href="https://getcharactersheet.com/">CharacterSheet</a><a href="https://getchoru.com/">Choru</a></div></div><div class="sf-sec"><span class="sf-label">Language</span><div class="sf-grid"><span class="on" lang="en">English</span><a href="/de/" lang="de" hreflang="de">Deutsch</a><a href="/it/" lang="it" hreflang="it">Italiano</a><a href="/es/" lang="es" hreflang="es">Español</a><a href="/fr/" lang="fr" hreflang="fr">Français</a><a href="/pt-br/" lang="pt-BR" hreflang="pt-BR">Português (Brasil)</a></div></div>
     <p class="sf-legal">© <a href="https://ozols.dev" rel="author">Emils Ozols</a>. Apple, iPhone, and the App Store badge are trademarks of Apple Inc.</p>
   </div>
+  <script>document.querySelectorAll('.sf a').forEach(function(a){if(a.pathname===location.pathname)a.classList.add('cur')});</script>
 </footer><!--/ap-footer-->
 
 <script>
