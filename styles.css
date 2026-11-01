@@ -489,3 +489,8 @@ a.article-cta:hover { text-decoration: none; }
 /* Homepage FAQ centred (2026-11-01) */
 #faq .section-head { margin-left: auto; margin-right: auto; text-align: center; }
 #faq .faq-list { margin-left: auto; margin-right: auto; }
+
+/* Guide card icons (2026-11-01) */
+.guide-card .gi { width: 36px; height: 36px; border-radius: 10px; background: var(--accent-dim); color: var(--accent-soft);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.guide-card .gi svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
