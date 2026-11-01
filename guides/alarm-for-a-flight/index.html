@@ -11,7 +11,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=4f7c722c">
+<link rel="stylesheet" href="/styles.css?v=8f3d446a">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Alarm Clock Planner">
 <meta property="og:title" content="How to Set an Alarm for a Flight Weeks in Advance">
@@ -221,6 +221,7 @@ new IntersectionObserver(function(es){var e=es[0];f.classList.toggle('on',!e.isI
           Alarm Clock Planner
         </div>
         <p class="footer-note">The iPhone alarm clock for dates, not just weekdays.<br>Requires iOS 26.2 or later.</p>
+        <p class="footer-note footer-night">Made at night by one developer, between 21:00 and midnight.</p>
       </div>
       <div class="footer-links">
         <a href="/guides/">Guides</a>
@@ -260,6 +261,9 @@ new IntersectionObserver(function(es){var e=es[0];f.classList.toggle('on',!e.isI
 
   var css = '' +
     '.rp{position:fixed;z-index:30;width:108px;height:222px;pointer-events:none;will-change:transform}' +
+    '.rp .ph{pointer-events:auto;cursor:pointer}' +
+    '.rp-say{position:fixed;z-index:31;pointer-events:none;padding:8px 13px;border-radius:12px;background:#34d477;color:#06210f;font:600 14px/1.3 -apple-system,BlinkMacSystemFont,Inter,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.4);opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s;max-width:220px}' +
+    '.rp-say.on{opacity:1;transform:none}' +
     '.rp svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 14px rgba(52,212,119,.35)) drop-shadow(0 10px 24px rgba(0,0,0,.5))}' +
     '.rp .ph{transform-box:fill-box;transform-origin:center}' +
     '.rp .wv{opacity:0;transform-origin:39px 80px}' +
@@ -286,7 +290,7 @@ new IntersectionObserver(function(es){var e=es[0];f.classList.toggle('on',!e.isI
     // bell
     '<path d="M39 53.5c-3.9 0-6.4 2.9-6.4 6.6v4.1l-2.1 3.2h17l-2.1-3.2v-4.1c0-3.7-2.5-6.6-6.4-6.6z" fill="#0b1120"/>' +
     '<circle cx="39" cy="69.6" r="1.9" fill="#0b1120"/>' +
-    '<text x="39" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Inter,sans-serif" font-size="17" font-weight="700" fill="#fff">7:00</text>' +
+    '<text x="39" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Inter,sans-serif" font-size="17" font-weight="700" fill="#fff" class="tm">7:00</text>' +
     '<rect x="15" y="126" width="48" height="13" rx="6.5" fill="#34d477" opacity=".9"/>' +  // the stop button
     '<rect x="29" y="146" width="20" height="2.5" rx="1.25" fill="#3a4560"/>' +
     '</g></svg>';
@@ -305,8 +309,23 @@ new IntersectionObserver(function(es){var e=es[0];f.classList.toggle('on',!e.isI
     ];
   }
 
+  // Tap the phone to snooze it. Three snoozes and it gives up for the rest of the visit.
+  var SNOOZE = ['Snoozed. 9 more minutes.', 'Snoozed again? Bold.', 'Fine. Alarm off. Sweet dreams.'];
+  function store(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
+  function say(text, el) {
+    var r = el.getBoundingClientRect(), b = document.createElement('div');
+    b.className = 'rp-say'; b.setAttribute('aria-hidden', 'true'); b.textContent = text;
+    document.body.appendChild(b);
+    var x = Math.min(Math.max(r.left + r.width / 2 - 110, 12), innerWidth - 232), y = Math.min(Math.max(r.top + r.height / 2 - 20, 70), innerHeight - 60);
+    b.style.left = x + 'px'; b.style.top = y + 'px';
+    requestAnimationFrame(function () { b.classList.add('on'); });
+    setTimeout(function () { b.classList.remove('on'); setTimeout(function () { b.remove(); }, 250); }, 1800);
+  }
+  function now() { var d = new Date(); return d.getHours() + ':' + ('0' + d.getMinutes()).slice(-2); }
+
   var last = -1, busy = false;
   function ring() {
+    if (store('rp-off')) return;
     if (busy || document.hidden || innerWidth < 1000) return schedule();
     var all = spots(), i;
     if (hold) i = +hold[1];
@@ -316,6 +335,7 @@ new IntersectionObserver(function(es){var e=es[0];f.classList.toggle('on',!e.isI
     el.className = 'rp';
     el.setAttribute('aria-hidden', 'true');
     el.innerHTML = phone;
+    el.querySelector('.tm').textContent = now();   // it rings at the visitor's own time
     for (var k in s.pos) el.style[k] = s.pos[k];
     document.body.appendChild(el);
     busy = true;
@@ -326,11 +346,21 @@ new IntersectionObserver(function(es){var e=es[0];f.classList.toggle('on',!e.isI
       .onfinish = function () {
         el.classList.add('buzz');
         if (hold) return;
-        setTimeout(function () {
+        var gone = false;
+        function leave() {
+          if (gone) return; gone = true;
           el.classList.remove('buzz');
           el.animate([{ transform: inn }, { transform: out }], { duration: 300, easing: 'cubic-bezier(.5,0,.8,.4)', fill: 'forwards' })
             .onfinish = function () { el.remove(); busy = false; schedule(); };
-        }, 900);
+        }
+        el.querySelector('.ph').addEventListener('click', function () {
+          var n = +(store('rp-snoozes') || 0) + 1;
+          store('rp-snoozes', n);
+          say(SNOOZE[Math.min(n, 3) - 1], el);
+          if (n >= 3) store('rp-off', '1');
+          leave();
+        });
+        setTimeout(leave, 1300);   // a little longer than the buzz so there is time to tap it
       };
   }
   function schedule() { setTimeout(ring, demo ? 2500 : 7000 + Math.random() * 7000); }
@@ -344,5 +374,156 @@ new IntersectionObserver(function(es){var e=es[0];f.classList.toggle('on',!e.isI
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
 </script>
+<script>
+// Small touches that give the site its personality (2026-11-01). Inlined into every page by gen_guides.py.
+// 1. A scrollbar on the right whose thumb is the app's alarm clock icon: it grows and rings while you scroll,
+//    and can be dragged or tapped. Wide screens only; phones keep their own scrollbar.
+// 2. Hand-drawn arrows with a note that point at the important bits, drawn in when they scroll into view.
+// 3. Time-aware lines: a late-night nudge on the homepage, reading time measured in snoozes on guides.
+// Everything is decoration: aria-hidden, no layout shift, nothing moves for prefers-reduced-motion.
+(function () {
+  var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var css = '' +
+    // 1. scrollbar
+    'html.ap-sb{scrollbar-width:none}html.ap-sb::-webkit-scrollbar{display:none}' +
+    '.ap-sb-track{position:fixed;z-index:40;top:74px;bottom:18px;right:8px;width:6px;border-radius:3px;background:rgba(154,166,191,.16);cursor:pointer}' +
+    '.ap-sb-thumb{position:absolute;left:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:8px;cursor:grab;touch-action:none;' +
+    'background:url(/assets/apple-touch-icon.png) center/cover;box-shadow:0 0 0 2px rgba(52,212,119,.0),0 4px 12px rgba(0,0,0,.45);transition:transform .18s ease,box-shadow .18s ease}' +
+    '.ap-sb-thumb.on{transform:scale(1.45);box-shadow:0 0 0 2px rgba(52,212,119,.8),0 0 18px rgba(52,212,119,.55)}' +
+    '.ap-sb-thumb.on.ring{animation:apSbRing .1s linear infinite alternate}' +
+    '@keyframes apSbRing{0%{transform:scale(1.45) rotate(-9deg)}100%{transform:scale(1.45) rotate(9deg)}}' +
+    // 2. notes
+    '.ap-note{position:absolute;z-index:5;pointer-events:none;color:#34d477;font:400 21px/1.15 "Bradley Hand","Segoe Print","Comic Sans MS",cursive;white-space:nowrap}' +
+    '.ap-note svg{position:absolute;overflow:visible}' +
+    '.ap-note path{fill:none;stroke:#34d477;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset .7s ease .15s}' +
+    '.ap-note span{display:inline-block;opacity:0;transform:rotate(-4deg) translateY(4px);transition:opacity .4s ease,transform .4s ease}' +
+    '.ap-note.in path{stroke-dashoffset:0}.ap-note.in span{opacity:.95;transform:rotate(-4deg)}' +
+    // 3. time lines
+    '.ap-late{margin:10px 0 0;font-size:14px;color:#34d477;opacity:.9}' +
+    '.ap-read{margin:-4px 0 14px;font-size:14px;opacity:.65}';
+  var st = document.createElement('style');
+  st.textContent = css;
+  document.head.appendChild(st);
+
+  function ready(fn) { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn); else fn(); }
+
+  ready(function () {
+    // ---------- 1. alarm-clock scrollbar ----------
+    var wide = window.matchMedia && matchMedia('(min-width: 1000px) and (hover: hover)');
+    var track, thumb, idle, dragging = false;
+    function maxScroll() { return Math.max(1, document.documentElement.scrollHeight - innerHeight); }
+    function place() {
+      if (!track) return;
+      var h = track.clientHeight, p = Math.min(1, Math.max(0, scrollY / maxScroll()));
+      thumb.style.top = Math.round(15 + p * (h - 30)) + 'px';
+      track.style.display = document.documentElement.scrollHeight > innerHeight + 40 ? '' : 'none';
+    }
+    function wake() {
+      thumb.classList.add('on');
+      if (!still) thumb.classList.add('ring');
+      clearTimeout(idle);
+      idle = setTimeout(function () { thumb.classList.remove('ring'); if (!dragging) thumb.classList.remove('on'); }, 450);
+    }
+    function scrollToY(clientY) {
+      var r = track.getBoundingClientRect(), p = (clientY - r.top - 15) / Math.max(1, r.height - 30);
+      scrollTo(0, Math.min(1, Math.max(0, p)) * maxScroll());
+    }
+    function build() {
+      if (track || !(wide && wide.matches)) return;
+      document.documentElement.classList.add('ap-sb');
+      track = document.createElement('div'); track.className = 'ap-sb-track'; track.setAttribute('aria-hidden', 'true');
+      thumb = document.createElement('div'); thumb.className = 'ap-sb-thumb';
+      track.appendChild(thumb); document.body.appendChild(track);
+      track.addEventListener('click', function (e) { if (e.target === track) { wake(); scrollToY(e.clientY); } });
+      thumb.addEventListener('pointerdown', function (e) {
+        dragging = true; thumb.setPointerCapture(e.pointerId); wake(); e.preventDefault();
+      });
+      thumb.addEventListener('pointermove', function (e) { if (dragging) { scrollToY(e.clientY); wake(); } });
+      thumb.addEventListener('pointerup', function () { dragging = false; wake(); });
+      thumb.addEventListener('click', wake);
+      place();
+    }
+    function teardown() {
+      if (!track) return;
+      track.remove(); track = thumb = null;
+      document.documentElement.classList.remove('ap-sb');
+    }
+    build();
+    if (wide && wide.addEventListener) wide.addEventListener('change', function () { wide.matches ? build() : teardown(); });
+    addEventListener('scroll', function () { if (track) { place(); wake(); } }, { passive: true });
+    addEventListener('resize', function () { place(); notes.forEach(pos); }, { passive: true });
+
+    // ---------- 2. hand-drawn notes ----------
+    // [selector, text, side]: side is where the note sits; the arrow points from it to the element.
+    var NOTES = [
+      ['.hero h1 .accent', 'yes, even next year', 'above'],
+      ['.hero .ap-rating', 'real ones, too', 'right'],
+      ['#features .section-head h2', 'tap a card for the full story', 'above', '.feature-card h3 a'],
+      ['.article .ap-get', 'free to download, no account', 'left'],
+      ['.article .ap-toc', 'jump straight to your step', 'right']
+    ];
+    var ARROWS = {   // a curve from the note to the element, in the note's own coordinates
+      above: 'M2 6 C -14 14, -18 28, -10 46 M-19 37 L-10 47 L-3 36',
+      right: 'M-8 2 C -30 2, -42 6, -58 16 M-50 6 L-60 17 L-46 22',
+      left: 'M8 2 C 30 2, 44 8, 60 18 M50 8 L62 19 L48 24'
+    };
+    var notes = [];
+    function pos(n) {
+      var r = n.target.getClientRects()[0] || n.target.getBoundingClientRect();   // first line of a wrapped word
+      var x = r.left + scrollX, y = r.top + scrollY, el = n.el, w = el.offsetWidth;
+      if (n.side === 'above') { el.style.left = (x + 14) + 'px'; el.style.top = (y - 50) + 'px'; }
+      if (n.side === 'right') { el.style.left = (x + r.width + 70) + 'px'; el.style.top = (y - 6) + 'px'; }
+      if (n.side === 'left') { el.style.left = (x - w - 74) + 'px'; el.style.top = (y + 14) + 'px'; }
+      var fits = parseFloat(el.style.left) > 8 && parseFloat(el.style.left) + w < document.documentElement.clientWidth - 24;
+      el.style.display = fits && innerWidth >= 1100 ? '' : 'none';
+      var art = document.querySelector('.hero-art');   // never write over the hero picture
+      if (art && el.style.display === '') {
+        var a = art.getBoundingClientRect(), b = el.getBoundingClientRect();
+        if (b.left < a.right && b.right > a.left && b.top < a.bottom && b.bottom > a.top) el.style.display = 'none';
+      }
+    }
+    NOTES.forEach(function (c) {
+      var t = document.querySelector(c[0]);
+      if (!t || (c[3] && !document.querySelector(c[3]))) return;
+      var el = document.createElement('div');
+      el.className = 'ap-note' + (still ? ' in' : ''); el.setAttribute('aria-hidden', 'true');
+      var svg = c[2] === 'left' ? '<svg style="right:-70px;top:4px" width="70" height="30"><path transform="translate(-4,4)" d="' + ARROWS.left + '"/></svg>'
+        : c[2] === 'right' ? '<svg style="left:0;top:6px" width="1" height="1"><path d="' + ARROWS.right + '"/></svg>'
+        : '<svg style="left:0;top:22px" width="1" height="1"><path d="' + ARROWS.above + '"/></svg>';
+      el.innerHTML = '<span>' + c[1] + '</span>' + svg;
+      document.body.appendChild(el);
+      var n = { el: el, target: t, side: c[2] };
+      notes.push(n); pos(n);
+      if (!still && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (es) {
+          if (es[0].isIntersecting) { setTimeout(function () { el.classList.add('in'); }, 250); io.disconnect(); }
+        }, { threshold: 0.6 });
+        io.observe(t);
+      } else el.classList.add('in');
+    });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { notes.forEach(pos); });
+
+    // ---------- 3. time-aware lines ----------
+    var d = new Date(), hh = d.getHours();
+    var cta = document.querySelector('.hero .cta-row');
+    if (cta && (hh >= 22 || hh < 5)) {
+      var late = document.createElement('p');
+      late.className = 'ap-late';
+      late.textContent = "It's " + hh + ':' + ('0' + d.getMinutes()).slice(-2) + ". Is tomorrow's alarm set?";
+      cta.parentNode.insertBefore(late, cta.nextSibling);
+    }
+    var art = document.querySelector('article.article'), lede = art && art.querySelector(':scope > .lede');
+    if (art && lede && art.querySelector('.ap-get')) {   // guides and feature pages
+      var words = (art.innerText || '').split(/\s+/).length, mins = Math.max(1, Math.round(words / 230));
+      var read = document.createElement('p');
+      read.className = 'ap-read';
+      read.textContent = mins + ' min read, ' + (mins <= 9 ? 'shorter than one snooze' : 'about ' + Math.round(mins / 9) + ' snoozes');
+      lede.parentNode.insertBefore(read, lede);
+      notes.forEach(pos);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
