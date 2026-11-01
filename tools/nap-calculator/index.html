@@ -430,7 +430,16 @@
     '.ap-note.in path{stroke-dashoffset:0}.ap-note.in span{opacity:.95;transform:rotate(-4deg)}' +
     // 3. time lines
     '.ap-late{margin:10px 0 0;font-size:14px;color:#34d477;opacity:.9}' +
-    '.ap-read{margin:-4px 0 14px;font-size:14px;opacity:.65}';
+    '.ap-read{margin:-4px 0 14px;font-size:14px;opacity:.65}' +
+    // 4. knock the screenshots out of the carousel
+    '.shots-marquee figure{cursor:pointer;transition:width .45s ease,margin .45s ease,opacity .3s ease}' +
+    '.shots-marquee figure.gone{width:0!important;margin-right:0!important;opacity:0}' +
+    '.ko-fall{position:fixed;z-index:60;pointer-events:none;margin:0}' +
+    '.ko-win{display:none;text-align:center;padding:30px 16px 34px}' +
+    '.ko-win.on{display:block;animation:koIn .5s cubic-bezier(.2,.9,.3,1.3)}' +
+    '.ko-win h3{font-size:26px;margin:0 0 6px}.ko-win p{color:var(--muted);margin:0 0 18px}' +
+    '.ko-win .badge-link{display:inline-flex}.ko-win button{display:block;margin:16px auto 0;background:none;border:0;color:var(--accent);font:inherit;font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}' +
+    '@keyframes koIn{0%{opacity:0;transform:scale(.85)}100%{opacity:1;transform:none}}';
   var st = document.createElement('style');
   st.textContent = css;
   document.head.appendChild(st);
@@ -487,7 +496,8 @@
     // [selector, text, side]: side is where the note sits; the arrow points from it to the element.
     var NOTES = [
       ['.hero .ap-rating', 'real ones, too', 'right'],
-      ['#features .section-head h2', 'tap a card for the full story', 'above', '.feature-card h3 a'],
+      ['#features .feature-card:nth-child(4)', 'tap any card', 'right', '.feature-card h3 a'],
+      ['#screenshots .section-head p', 'tap one. go on.', 'right'],
       ['.article .ap-get', 'free to download, no account', 'left'],
       ['.article .ap-toc', 'jump straight to your step', 'right']
     ];
@@ -498,7 +508,9 @@
     };
     var notes = [];
     function pos(n) {
-      var r = n.target.getClientRects()[0] || n.target.getBoundingClientRect();   // first line of a wrapped word
+      var rg = document.createRange(); rg.selectNodeContents(n.target);   // the text itself, not the block around it
+      var r = (n.side === 'right' && /^(P|H\d|SPAN|A)$/.test(n.target.tagName) && rg.getClientRects().length ? rg.getClientRects()[rg.getClientRects().length - 1] : null) ||
+              n.target.getClientRects()[0] || n.target.getBoundingClientRect();
       var x = r.left + scrollX, y = r.top + scrollY, el = n.el, w = el.offsetWidth;
       if (n.side === 'above') { el.style.left = (x + 14) + 'px'; el.style.top = (y - 50) + 'px'; }
       if (n.side === 'right') { el.style.left = (x + r.width + 70) + 'px'; el.style.top = (y - 6) + 'px'; }
@@ -542,6 +554,49 @@
         (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () {
           sms.textContent = 'Copied'; setTimeout(function () { sms.textContent = 'or copy the link'; }, 1600);
         }, function () { prompt('Copy this link:', url); });
+      });
+    }
+
+    // ---------- 4. tap a screenshot and it falls out of the carousel; knock them all out for a reward ----------
+    var mq = document.querySelector('.shots-marquee');
+    if (mq) {
+      var sets = [].slice.call(mq.querySelectorAll('.shots-set'));
+      var total = sets[0].children.length, left = total, track = mq.querySelector('.shots-track');
+      var store = mq.querySelector('a.badge-link') || document.querySelector('.hero a.badge-link');
+      var win = document.createElement('div');
+      win.className = 'ko-win';
+      win.innerHTML = '<h3>Good job, you broke it.</h3><p>Here is your reward: the real thing, on your iPhone.</p>' +
+        (store ? store.outerHTML : '') + '<button type="button">Put them all back</button>';
+      mq.parentNode.insertBefore(win, mq.nextSibling);
+      win.querySelector('button').addEventListener('click', function () {
+        sets.forEach(function (st) { [].forEach.call(st.children, function (f) { f.classList.remove('gone'); f.style.display = ''; }); });
+        left = total; speed(); mq.style.display = ''; win.classList.remove('on');
+      });
+      function speed() {   // fewer screens, shorter loop: keep the scroll speed the same
+        var a = track.getAnimations ? track.getAnimations()[0] : null;
+        if (a && a.updatePlaybackRate) a.updatePlaybackRate(total / Math.max(left, 1));
+      }
+      mq.addEventListener('click', function (e) {
+        var fig = e.target.closest('figure');
+        if (!fig || fig.classList.contains('gone')) return;
+        var i = [].indexOf.call(fig.parentNode.children, fig);
+        var r = fig.getBoundingClientRect(), ghost = fig.cloneNode(true);
+        ghost.className = 'ko-fall'; ghost.style.left = r.left + 'px'; ghost.style.top = r.top + 'px'; ghost.style.width = r.width + 'px';
+        document.body.appendChild(ghost);
+        var dir = Math.random() < 0.5 ? -1 : 1;
+        if (!still && ghost.animate) {
+          ghost.animate([{ transform: 'translate(0,0) rotate(0)', opacity: 1 },
+                         { transform: 'translate(' + dir * 60 + 'px,-40px) rotate(' + dir * 8 + 'deg)', opacity: 1, offset: 0.18 },
+                         { transform: 'translate(' + dir * 180 + 'px,' + (innerHeight - r.top + 200) + 'px) rotate(' + dir * 70 + 'deg)', opacity: 1 }],
+                        { duration: 1100, easing: 'cubic-bezier(.4,0,.9,.6)' }).onfinish = function () { ghost.remove(); };
+        } else ghost.remove();
+        sets.forEach(function (st) { var f = st.children[i]; if (f) f.classList.add('gone'); });
+        left -= 1;
+        setTimeout(function () {
+          sets.forEach(function (st) { var f = st.children[i]; if (f) f.style.display = 'none'; });
+          speed();
+          if (left === 0) { mq.style.display = 'none'; win.classList.add('on'); }
+        }, 460);
       });
     }
 
