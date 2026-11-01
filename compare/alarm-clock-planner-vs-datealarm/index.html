@@ -340,6 +340,7 @@
 // Inlined into every page by gen_guides.py (RING_JS); ?ring=demo makes it ring every 2.5 s.
 (function () {
   if (!window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var T = function (k) { return (window.AP_T && window.AP_T[k]) || k; };   // translated pages set window.AP_T
   var demo = /[?&]ring=demo\b/.test(location.search);
   var hold = demo && /[?&]hold=(\d)/.exec(location.search);   // ?ring=demo&hold=N: park at spot N, buzzing
 
@@ -440,7 +441,7 @@
         el.querySelector('.ph').addEventListener('click', function () {
           var n = +(store('rp-snoozes') || 0) + 1;
           store('rp-snoozes', n);
-          say(SNOOZE[Math.min(n, 3) - 1], el);
+          say(T(SNOOZE[Math.min(n, 3) - 1]), el);
           if (n >= 3) store('rp-off', '1');
           leave();
         });
@@ -467,6 +468,7 @@
 // Everything is decoration: aria-hidden, no layout shift, nothing moves for prefers-reduced-motion.
 (function () {
   var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var T = function (k) { return (window.AP_T && window.AP_T[k]) || k; };   // translated pages set window.AP_T
   var css = '' +
     // 1. scrollbar
     'html.ap-sb{scrollbar-width:none}html.ap-sb::-webkit-scrollbar{display:none}' +
@@ -585,7 +587,7 @@
       var svg = c[2] === 'left' ? '<svg style="right:-70px;top:4px" width="70" height="30"><path transform="translate(-4,4)" d="' + ARROWS.left + '"/></svg>'
         : c[2] === 'right' ? '<svg style="left:0;top:6px" width="1" height="1"><path d="' + ARROWS.right + '"/></svg>'
         : '<svg style="left:0;top:22px" width="1" height="1"><path d="' + ARROWS.above + '"/></svg>';
-      el.innerHTML = '<span>' + c[1] + '</span>' + svg;
+      el.innerHTML = '<span>' + T(c[1]) + '</span>' + svg;
       document.body.appendChild(el);
       var n = { el: el, target: t, side: c[2] };
       notes.push(n); pos(n);
@@ -601,13 +603,13 @@
     // ---------- homepage QR card: 'text me the link' only works on a Mac; elsewhere it copies the link ----------
     var sms = document.querySelector('.hero-qr .ap-sms');
     if (sms && !/Mac/.test(navigator.platform || navigator.userAgent)) {
-      sms.textContent = 'or copy the link';
+      sms.textContent = T('or copy the link');
       sms.addEventListener('click', function (e) {
         e.preventDefault();
         var url = sms.getAttribute('data-copy');
         (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () {
-          sms.textContent = 'Copied'; setTimeout(function () { sms.textContent = 'or copy the link'; }, 1600);
-        }, function () { prompt('Copy this link:', url); });
+          sms.textContent = T('Copied'); setTimeout(function () { sms.textContent = T('or copy the link'); }, 1600);
+        }, function () { prompt(T('Copy this link:'), url); });
       });
     }
 
@@ -619,8 +621,8 @@
       var store = mq.querySelector('a.badge-link') || document.querySelector('.hero a.badge-link');
       var win = document.createElement('div');
       win.className = 'ko-win';
-      win.innerHTML = '<h3>Good job, you broke it.</h3><p>Here is your reward: the real thing, on your iPhone.</p>' +
-        (store ? store.outerHTML : '') + '<button type="button">Put them all back</button>';
+      win.innerHTML = '<h3>' + T('Good job, you broke it.') + '</h3><p>' + T('Here is your reward: the real thing, on your iPhone.') + '</p>' +
+        (store ? store.outerHTML : '') + '<button type="button">' + T('Put them all back') + '</button>';
       mq.parentNode.insertBefore(win, mq.nextSibling);
       win.querySelector('button').addEventListener('click', function () {
         sets.forEach(function (st) { [].forEach.call(st.children, function (f) { f.classList.remove('gone'); f.style.display = ''; }); });
@@ -670,7 +672,7 @@
     if (cta && (hh >= 22 || hh < 5)) {
       var late = document.createElement('p');
       late.className = 'ap-late';
-      late.textContent = "It's " + hh + ':' + ('0' + d.getMinutes()).slice(-2) + ". Is tomorrow's alarm set?";
+      late.textContent = T("It's {t}. Is tomorrow's alarm set?").replace('{t}', hh + ':' + ('0' + d.getMinutes()).slice(-2));
       cta.parentNode.insertBefore(late, cta.nextSibling);
     }
     var art = document.querySelector('article.article'), lede = art && art.querySelector(':scope > .lede');
@@ -678,7 +680,7 @@
       var words = (art.innerText || '').split(/\s+/).length, mins = Math.max(1, Math.round(words / 230));
       var read = document.createElement('p');
       read.className = 'ap-read';
-      read.textContent = mins + ' min read, ' + (mins <= 9 ? 'shorter than one snooze' : 'about ' + Math.round(mins / 9) + ' snoozes');
+      read.textContent = (mins <= 9 ? T('{n} min read, shorter than one snooze') : T('{n} min read, about {s} snoozes').replace('{s}', Math.round(mins / 9))).replace('{n}', mins);
       lede.parentNode.insertBefore(read, lede);
       notes.forEach(pos);
     }
