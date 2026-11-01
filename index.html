@@ -11,7 +11,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=16a1bad2">
+<link rel="stylesheet" href="/styles.css?v=4f7c722c">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alarm Clock Planner">
 <meta property="og:title" content="Alarm Clock Planner: iPhone Alarms for Any Future Date">
@@ -41,6 +41,7 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.56", "ratingCount": "64", "bestRating": "5", "worstRating": "1" },
   "name": "Alarm Clock Planner",
   "operatingSystem": "iOS 26.2 or later",
   "applicationCategory": "UtilitiesApplication",
@@ -94,7 +95,7 @@
     {
       "@type": "Question",
       "name": "Can I set a quick nap alarm?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Press and hold the add button for one-tap nap presets: 10, 15, 20, or 30 minutes, or nap until a set time. Naps are unlimited." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Press and hold the add button for one-tap nap presets: 10, 15, 20, or 30 minutes, or nap until the next full hour. Naps are unlimited." }
     },
     {
       "@type": "Question",
@@ -154,6 +155,27 @@
         </a>
         <span class="cta-qr" aria-hidden="true"><img src="/assets/qr-appstore.svg?v=27e05e23" alt="" width="84" height="84"><span>On a computer? Scan with your iPhone camera to open the App Store.</span></span>
       </div>
+      <!--ap-rating--><style>
+.ap-rating{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;font-size:15px;opacity:.92}
+.ap-rating .st{position:relative;display:inline-block;letter-spacing:2px;color:rgba(127,127,127,.35)}
+.ap-rating .st i{position:absolute;inset:0 auto 0 0;overflow:hidden;white-space:nowrap;color:#f5b301;font-style:normal}
+.ap-rating b{font-weight:700}
+.ap-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:24px 0 8px}
+.ap-cards a.ap-card{display:flex;flex-direction:column;border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;
+ border:1px solid rgba(127,127,127,.22);background:rgba(127,127,127,.06)}
+.ap-cards a.ap-card:hover{border-color:rgba(127,127,127,.45)}
+.ap-card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.ap-card .tx{padding:14px 16px 16px}
+.ap-card h2,.ap-card h3{font-size:18px;margin:0 0 6px;line-height:1.3}
+.ap-card p{margin:0;font-size:15px;opacity:.8;line-height:1.5}
+.ap-rel{border-top:1px solid rgba(127,127,127,.22);padding:22px 0 0;margin:28px 0 0}
+.ap-rel h2{font-size:20px;margin:0 0 10px}
+.ap-release{border-top:1px solid rgba(127,127,127,.22);padding:18px 0 4px}
+.ap-release h2{font-size:20px;margin:0 0 4px}
+.ap-release .when{font-size:14px;opacity:.7;margin:0 0 8px}
+.ap-release ul{margin:6px 0 10px;padding-left:20px}
+@media (max-width:520px){.ap-cards{grid-template-columns:1fr}}
+</style><p class="ap-rating"><span class="st" aria-hidden="true">★★★★★<i style="width:91.2%">★★★★★</i></span><span><b>4.6</b> on the App Store, from 64 ratings</span></p><!--/ap-rating-->
       <div class="android-cta" id="android-cta">On Android? <button type="button" class="android-link" id="android-btn">Register your interest</button></div>
       <div class="trust-row">
         <span>Alarms for any date</span>
@@ -209,7 +231,7 @@
       <div class="feature-card">
         <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div>
         <h3>One-tap nap</h3>
-        <p>Hold the add button for instant 10, 15, 20, or 30 minute naps, or nap until a set time.</p>
+        <p>Hold the add button for instant 10, 15, 20, or 30 minute naps, or nap until the next full hour.</p>
       </div>
       <div class="feature-card">
         <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 010 18z" fill="currentColor" stroke="none"/></svg></div>
@@ -449,7 +471,7 @@
       </details>
       <details>
         <summary>Can I set a quick nap alarm?</summary>
-        <p>Yes. Press and hold the add button for one-tap nap presets: 10, 15, 20, or 30 minutes, or nap until a set time. Naps are unlimited. <a href="/guides/nap-alarm-iphone/">Learn more</a></p>
+        <p>Yes. Press and hold the add button for one-tap nap presets: 10, 15, 20, or 30 minutes, or nap until the next full hour. Naps are unlimited. <a href="/guides/nap-alarm-iphone/">Learn more</a></p>
       </details>
       <details>
         <summary>Can I set an alarm for a flight that is weeks away?</summary>
@@ -502,6 +524,9 @@
       <div class="footer-links">
         <a href="/guides/">Guides</a>
         <a href="/compare/">Compare</a>
+        <a href="/tools/nap-calculator/">Nap calculator</a>
+        <a href="/whats-new/">What's New</a>
+        <a href="/about/">About</a>
         <a href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_Home&amp;mt=8" data-ph="appstore_click">App Store</a>
         <a href="/support/">Support</a>
         <a href="/privacy/">Privacy</a>
@@ -509,6 +534,7 @@
         <a href="https://ozols.dev" rel="author">Made by Emils Ozols</a>
       </div>
     </div>
+    <!--ap-feat--><!--/ap-feat-->
     <p class="footer-more">More apps by Emils Ozols: <a href="https://remireminder.app/" data-ph="crosssell_remi">Remi someday reminders</a> &middot; <a href="https://risemorning.app/" data-ph="crosssell_rise">Rise morning routine</a> &middot; <a href="https://getscooch.com/" data-ph="crosssell_scooch">Scooch room planner</a> &middot; <a href="https://getcharactersheet.com/" data-ph="crosssell_charactersheet">CharacterSheet fitness RPG</a> &middot; <a href="https://getchoru.com/" data-ph="crosssell_choru">Choru chore chart</a></p>
     <p class="footer-note">© Emils Ozols. Apple, iPhone, and the App Store badge are trademarks of Apple Inc.</p>
   </div>
