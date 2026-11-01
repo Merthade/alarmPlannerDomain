@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head><script>window.AP_T={"Snoozed. 9 more minutes.": "Soneca. Mais 9 minutos.", "Snoozed again? Bold.": "Adiou de novo? Ousado.", "Fine. Alarm off. Sweet dreams.": "Tá bom. Alarme desativado. Bons sonhos.", "real ones, too": "os de verdade também", "tap any card": "toque em qualquer cartão", "tap one. go on.": "toque em um. Vai lá.", "free to download, no account": "grátis para baixar, sem conta", "jump straight to your step": "vá direto ao seu passo", "It's {t}. Is tomorrow's alarm set?": "São {t}. O alarme de amanhã está definido?", "{n} min read, shorter than one snooze": "{n} min de leitura, menos que uma soneca", "{n} min read, about {s} snoozes": "{n} min de leitura, cerca de {s} sonecas", "or copy the link": "ou copie o link", "Copied": "Copiado", "Copy this link:": "Copie este link:", "Good job, you broke it.": "Parabéns, você quebrou.", "Here is your reward: the real thing, on your iPhone.": "Aqui está sua recompensa: o app de verdade, no seu iPhone.", "Put them all back": "Colocar tudo de volta"};</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Widget de alarme para a Tela de Início e a Tela Bloqueada do iPhone | Alarm Clock Planner</title>
+<meta content="O widget de próximo alarme do Alarm Clock Planner: um bloco para a Tela de Início com um interruptor e dois widgets para a Tela Bloqueada. Veja o que cada um mostra e onde ele termina." name="description"/>
+<link href="https://alarmclockplanner.com/pt-br/features/widgets/" rel="canonical"/>
+<meta content="app-id=6772136401" name="apple-itunes-app"/>
+<meta content="#0a0f1e" name="theme-color"/>
+<link href="/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="/assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/styles.css?v=45706a3f" rel="stylesheet"/>
+<meta content="article" property="og:type"/>
+<meta content="Alarm Clock Planner" property="og:site_name"/>
+<meta content="Widget de alarme para a Tela de Início e a Tela Bloqueada do iPhone | Alarm Clock Planner" property="og:title"/>
+<meta content="O widget de próximo alarme do Alarm Clock Planner: um bloco para a Tela de Início com um interruptor e dois widgets para a Tela Bloqueada. Veja o que cada um mostra e onde ele termina." property="og:description"/>
+<meta content="https://alarmclockplanner.com/pt-br/features/widgets/" property="og:url"/>
+<meta content="https://alarmclockplanner.com/assets/features/widgets/widgets.png" property="og:image"/>
+<meta content="1536" property="og:image:width"/>
+<meta content="864" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@ozolsdev" name="twitter:site"/>
+<meta content="Widget de alarme para a Tela de Início e a Tela Bloqueada do iPhone | Alarm Clock Planner" name="twitter:title"/>
+<meta content="O widget de próximo alarme do Alarm Clock Planner: um bloco para a Tela de Início com um interruptor e dois widgets para a Tela Bloqueada. Veja o que cada um mostra e onde ele termina." name="twitter:description"/>
+<meta content="https://alarmclockplanner.com/assets/features/widgets/widgets.png" name="twitter:image"/>
+<link href="https://eu.i.posthog.com" rel="preconnect"/>
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing startSessionRecording stopSessionRecording isSessionRecordingStarted".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) && location.hostname !== '') {
+        posthog.init('phc_ztIjBWZp495eGWUZSUprsXSLzyElBWMcf2xc65kKfE5', {
+            api_host: 'https://eu.i.posthog.com',
+            person_profiles: 'anonymous',
+            persistence: 'memory'
+        });
+        posthog.register({ app_name: 'alarmclockplanner_web' });
+    }
+</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Widgets de alarme para a Tela de Início e a Tela Bloqueada do iPhone",
+  "description": "O widget de próximo alarme do Alarm Clock Planner: um bloco para a Tela de Início com um interruptor e dois widgets para a Tela Bloqueada. Veja o que cada um mostra e onde ele termina.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://alarmclockplanner.com/assets/features/widgets/widgets.png",
+    "width": 1536,
+    "height": 864
+  },
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-01",
+  "author": {
+    "@type": "Person",
+    "name": "Emils Ozols",
+    "url": "https://ozols.dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alarm Clock Planner",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://alarmclockplanner.com/assets/icon-512.png"
+    }
+  },
+  "mainEntityOfPage": "https://alarmclockplanner.com/features/widgets/"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://alarmclockplanner.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Recursos",
+      "item": "https://alarmclockplanner.com/features/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Widgets de alarme para a Tela de Início e a Tela Bloqueada do iPhone",
+      "item": "https://alarmclockplanner.com/features/widgets/"
+    }
+  ]
+}</script>
+<meta content="max-image-preview:large" name="robots"/>
+
+<meta content="pt_BR" property="og:locale"/><link href="https://alarmclockplanner.com/features/widgets/" hreflang="en" rel="alternate"/><link href="https://alarmclockplanner.com/de/features/widgets/" hreflang="de" rel="alternate"/><link href="https://alarmclockplanner.com/es/features/widgets/" hreflang="es" rel="alternate"/><link href="https://alarmclockplanner.com/fr/features/widgets/" hreflang="fr" rel="alternate"/><link href="https://alarmclockplanner.com/it/features/widgets/" hreflang="it" rel="alternate"/><link href="https://alarmclockplanner.com/pt-br/features/widgets/" hreflang="pt-BR" rel="alternate"/><link href="https://alarmclockplanner.com/features/widgets/" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="site-header">
+<nav aria-label="Principal" class="nav">
+<a class="nav-logo" href="/pt-br/">
+<img alt="" height="34" src="/assets/apple-touch-icon.png?v=e79105dc" width="34"/>
+      Alarm Clock Planner
+    </a>
+<div class="nav-links">
+<a href="/pt-br/features/">Recursos</a>
+<a href="/pt-br/#how-it-works">Como funciona</a>
+<a href="/pt-br/guides/">Guias</a>
+<a href="/pt-br/compare/">Comparar</a>
+<a href="/pt-br/#faq">FAQ</a>
+<a class="nav-cta" data-ph="appstore_click" href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_Feature&amp;mt=8">Baixar</a>
+</div>
+</nav>
+</header>
+<main>
+<article class="article">
+<nav aria-label="Trilha de navegação" class="breadcrumb"><a href="/pt-br/">Início</a> › <a href="/pt-br/features/">Recursos</a> › Widgets de alarme para a Tela de Início e a Tela Bloqueada do iPhone</nav>
+<h1>Widgets de alarme para a Tela de Início e a Tela Bloqueada do iPhone</h1>
+<p class="lede">O Alarm Clock Planner traz um widget chamado Próximo alarme. Ele vem como um bloco para a Tela de Início e como dois widgets para a Tela Bloqueada, e os três mostram o seu próximo alarme.</p>
+<figure class="ap-hero"><img alt="Uma Tela de Início do iPhone com o widget do Alarm Clock Planner mostrando o próximo alarme" fetchpriority="high" height="864" onerror="this.onerror=null;this.src='/assets/features/widgets/widgets.png'" src="/assets/features/widgets/widgets.webp?v=4cf11703" width="1536"/></figure>
+<style>figure.ap-hero,.article figure.ap-hero{margin:8px 0 20px;max-width:none;width:100%}.ap-hero img{width:100%;max-width:none;height:auto;border-radius:16px;display:block}</style>
+<style>
+.ap-get{margin:22px auto 30px;display:flex;flex-direction:column;align-items:center;gap:14px;max-width:440px;text-align:center}
+.ap-get-btn{display:block;width:100%;text-align:center;padding:14px 18px;border-radius:12px;font-weight:700;text-decoration:none;
+  background:var(--accent,var(--green,#2563eb));color:var(--ap-on-accent,#fff)}
+.ap-get-btn:hover{filter:brightness(1.06)}
+.ap-get-card{display:none;width:100%;align-items:center;gap:16px;padding:14px 16px;text-align:left;border-radius:14px;
+  border:1px solid color-mix(in srgb,var(--accent,var(--green,#2563eb)) 30%,transparent);
+  background:color-mix(in srgb,var(--accent,var(--green,#2563eb)) 6%,transparent)}
+.ap-get-card img{width:104px;height:104px;flex:none;border-radius:10px;background:#fff;padding:7px;box-sizing:border-box}
+.ap-get-card .t{display:block;font-weight:700;line-height:1.25}
+.ap-get-card .s{display:block;margin-top:4px;font-size:.88em;line-height:1.4;opacity:.72}
+.ap-sms{display:inline-block;margin-top:8px;font-size:.9em;font-weight:600;color:var(--accent,var(--green,#2563eb));
+  text-decoration:underline;text-underline-offset:3px}
+.ap-end{margin:40px auto 10px;max-width:440px;text-align:center}
+.ap-end h2{margin:0 0 14px}
+.ap-float{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:10px;padding:8px 8px 8px 10px;
+  border-radius:14px;border:1px solid rgba(128,128,128,.3);background:var(--bg,var(--surface,#fff));color:inherit;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);font-size:13px;line-height:1.25;transform:translateY(140%);transition:transform .25s ease}
+.ap-float.on{transform:none}
+.ap-float img{width:34px;height:34px;border-radius:8px}
+.ap-float b{display:block;font-size:13.5px}.ap-float small{opacity:.7}
+.ap-float a.go{margin-left:6px;padding:9px 12px;border-radius:10px;font-weight:700;font-size:12px;letter-spacing:.03em;
+  text-transform:uppercase;text-decoration:none;background:var(--accent,var(--green,#2563eb));color:var(--ap-on-accent,#fff)}
+.ap-float button{border:0;background:none;color:inherit;opacity:.5;font-size:16px;cursor:pointer;padding:2px 4px}
+.ap-float .phone{display:none}
+@media (min-width:900px) and (hover:hover) and (pointer:fine){.ap-get-card{display:flex}}
+@media (max-width:899px),(hover:none){.ap-float .computer{display:none}.ap-float .phone{display:inline-block}}
+@media (prefers-reduced-motion:reduce){.ap-float{transition:none}}
+</style>
+<style>:root{--ap-on-accent:#06210f}</style>
+<div class="ap-get" id="ap-get">
+<a class="ap-get-btn" data-ph="appstore_click" href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_FeatureTop&amp;mt=8">Baixe o Alarm Clock Planner na App Store</a>
+<div class="ap-get-card">
+<img alt="Código QR que abre o Alarm Clock Planner na App Store" height="104" src="/assets/qr-appstore.svg?v=27e05e23" width="104"/>
+<span><span class="t">O Alarm Clock Planner é um app para iPhone</span><span class="s">Aponte a câmera do seu iPhone para o código para instalar.</span>
+<a class="ap-sms" data-copy="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_Copy&amp;mt=8" data-ph="sms_link_click" data-sms="" href="sms:?&amp;body=Get%20Alarm%20Clock%20Planner%3A%20https%3A//apps.apple.com/app/apple-store/id6772136401%3Fpt%3D2187944%26ct%3DWebsite_SMS%26mt%3D8">ou receba o link por mensagem de texto</a></span>
+</div>
+</div>
+<aside aria-label="Alarm Clock Planner na App Store" class="ap-float" id="ap-float">
+<img alt="" height="34" src="/assets/apple-touch-icon.png?v=e79105dc" width="34"/>
+<span><b>Alarm Clock Planner</b><small>Alarmes para qualquer data</small></span>
+<a class="go computer" data-copy="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_Copy&amp;mt=8" data-ph="sms_link_click" data-sms="" href="sms:?&amp;body=Get%20Alarm%20Clock%20Planner%3A%20https%3A//apps.apple.com/app/apple-store/id6772136401%3Fpt%3D2187944%26ct%3DWebsite_SMS%26mt%3D8">Me mande o link por mensagem</a>
+<a class="go phone" data-ph="appstore_click" href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_FeatureTop&amp;mt=8">Obter</a>
+<button aria-label="Ocultar" onclick="this.parentNode.remove();try{sessionStorage.setItem('apFloat','0')}catch(e){}" type="button">×</button>
+</aside>
+<script>(function(){  // sms: opens Messages on a Mac; elsewhere nothing reliably handles it, so offer Copy link (Emil, 2026-11-02)
+var mac=/Mac/i.test(navigator.platform||'')||/Macintosh/.test(navigator.userAgent);if(mac)return;
+document.querySelectorAll('[data-sms]').forEach(function(a){var u=a.getAttribute('data-copy'),big=a.classList.contains('go');
+a.textContent=big?'Copy link':'or copy the link';a.href=u;a.setAttribute('data-ph','copy_link_click');
+a.addEventListener('click',function(e){if(!navigator.clipboard)return;e.preventDefault();
+navigator.clipboard.writeText(u).then(function(){var t=a.textContent;a.textContent=big?'Copied':'Link copied';
+setTimeout(function(){a.textContent=t},1800)},function(){location.href=u})})})})();</script>
+<script>(function(){var f=document.getElementById('ap-float'),g=document.getElementById('ap-get');if(!f||!g)return;
+try{if(sessionStorage.getItem('apFloat')==='0'){f.remove();return}}catch(e){}
+if(!('IntersectionObserver' in window)){f.classList.add('on');return}
+new IntersectionObserver(function(es){var e=es[0];f.classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0)}).observe(g)})();</script>
+<style>
+.ap-table{overflow-x:auto;margin:20px 0 26px;-webkit-overflow-scrolling:touch}
+.ap-table table{width:100%;border-collapse:collapse;font-size:.95em;line-height:1.45}
+.ap-table th,.ap-table td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid rgba(128,128,128,.28)}
+.ap-table thead th{font-weight:700;border-bottom-width:2px;white-space:nowrap}
+.ap-table td:first-child{min-width:11em}
+.ap-table td:last-child,.ap-table th:last-child{white-space:nowrap}
+.ap-table td:last-child a{font-weight:600}
+.ap-toc{margin:18px 0 28px;padding:14px 18px;border:1px solid rgba(128,128,128,.28);border-radius:12px}
+.ap-toc strong{display:block;font-size:.85em;letter-spacing:.04em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.ap-toc ol{margin:0;padding-left:1.3em}.ap-toc li{margin:3px 0}
+h2[id],h3[id]{scroll-margin-top:84px}
+</style>
+<div aria-label="Nesta página" class="ap-toc" role="navigation"><strong>Nesta página</strong><ol><li><a href="#what-it-does">O que o widget faz</a></li><li><a href="#how-it-works">Como funciona</a></li><li><a href="#options">Opções e tamanhos</a></li><li><a href="#when-to-use">Quando usar</a></li><li><a href="#limits">Limites</a></li></ol></div>
+<h2 id="what-it-does">O que o widget faz</h2>
+<p>O widget Próximo alarme mostra o alarme que toca em seguida, tirado de toda a sua lista de alarmes. Você o vê sem abrir o app: na Tela de Início como um bloco pequeno, ou na Tela Bloqueada como um widget circular ou largo. O bloco da Tela de Início também tem uma chave que ativa ou desativa esse alarme.</p>
+<p>O widget importa mais quando seus alarmes não são todos o mesmo alarme diário. Se a sua lista tem um alarme para uma data daqui a três semanas, um alarme de dias úteis e uma manhã pulada, você quer saber qual é de fato o próximo. O widget lê a mesma lista do app, então uma ocorrência pulada nunca aparece nele, e um alarme de data futura aparece assim que vira o mais próximo. Para o lado geral dos widgets no iPhone, veja o <a href="/pt-br/guides/iphone-alarm-widget-lock-screen/">guia do widget de alarme do iPhone</a>.</p>
+<h2 id="how-it-works">Como funciona</h2>
+<ol>
+<li>Crie seus alarmes no app. O widget não tem lista de alarmes própria e não mostra nada até existir pelo menos um alarme próximo. Sem nenhum, o bloco da Tela de Início e o widget retangular exibem <strong>Nenhum alarme programado</strong> e <strong>Toque para adicionar</strong>, e o widget circular mostra um ícone de alarme riscado.</li>
+<li>Adicione o widget chamado <strong>Próximo alarme</strong> (a galeria o lista em Alarm Planner) à sua Tela de Início ou Tela Bloqueada. A Apple descreve os passos nos guias <a href="https://support.apple.com/guide/iphone/add-edit-and-remove-widgets-iphb8f1bf206/ios">Adicionar, editar e remover widgets</a> e <a href="https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios">Criar uma Tela Bloqueada personalizada</a>.</li>
+<li>Escolha um tamanho. O widget aceita exatamente três: o bloco pequeno da Tela de Início, o widget circular da Tela Bloqueada e o widget retangular da Tela Bloqueada.</li>
+<li>Opcional: abra os <strong>Ajustes</strong> no app, defina <strong>Próximo alarme como</strong> como <strong>Data</strong> ou <strong>Contagem regressiva</strong> e decida se <strong>Mostrar soneca/cochilo no widget</strong> fica ativado.</li>
+<li>Toque no widget quando quiser. Ele desbloqueia o iPhone se for preciso e abre a aba Alarmes, nunca um editor.</li>
+</ol>
+<figure><img alt="Tela de Início do iPhone com o widget do Alarm Clock Planner mostrando Próximo: 13 de dezembro, o nome do alarme Comprar presentes, a hora 18:00 e uma chave verde" class="screen" height="1306" loading="lazy" onerror="this.onerror=null;this.src='/assets/shot-widget-home.png'" src="/assets/shot-widget-home.webp?v=0f29a5b9" width="640"/><figcaption>O bloco da Tela de Início: a data de hoje em cima, depois o dia do próximo alarme, o nome, a hora e a chave.</figcaption></figure>
+<p>O widget continua funcionando por um tempo quando você não abre o app. O app entrega a ele uma lista de até 30 toques futuros, e o widget passa para o seguinte sozinho quando um alarme dispara. Depois que esses 30 toques passarem (cerca de dez dias com três alarmes diários), abra o app uma vez para ele carregar o próximo lote. O widget também é atualizado à meia-noite, para a linha da data continuar certa.</p>
+<h2 id="options">Opções e tamanhos</h2>
+<div class="ap-table"><table>
+<thead><tr><th>Widget</th><th>O que mostra</th><th>Interativo?</th></tr></thead>
+<tbody>
+<tr><td>Tela de Início, pequeno</td><td>Data de hoje, dia do “Próximo:”, ícone da etiqueta, símbolo de repetição, nome, hora, chave</td><td>Sim, a chave</td></tr>
+<tr><td>Tela Bloqueada, circular</td><td>Ícone da etiqueta (ou de alarme), hora, ON ou OFF</td><td>Tocar abre o app</td></tr>
+<tr><td>Tela Bloqueada, retangular</td><td>Dia da semana e data, símbolo de repetição, ícone e nome da etiqueta, nome do alarme, hora, ON ou OFF</td><td>Tocar abre o app</td></tr>
+</tbody>
+</table></div>
+<p>Dois ajustes mudam o que o widget diz:</p>
+<div class="ap-table"><table>
+<thead><tr><th>Ajuste</th><th>Escolhas</th><th>Efeito</th></tr></thead>
+<tbody>
+<tr><td>Próximo alarme como</td><td>Data (padrão), Contagem regressiva</td><td>Os dois dizem “Hoje” ou “Amanhã” quando está perto. Mais adiante, Data diz “15 de julho” e Contagem regressiva diz “Em 5 dias” ou “Em 2 meses”. O bloco da Tela de Início usa isso, e também o cabeçalho da aba Alarmes e o cartão de um alarme repetido no app.</td></tr>
+<tr><td>Mostrar soneca/cochilo no widget</td><td>Desativado (padrão), Ativado</td><td>Desativado mantém uma soneca ou um <a href="/pt-br/features/nap-alarms/">alarme de cochilo</a> fora do widget. Ativado o mostra, para você confirmar que foi programado.</td></tr>
+</tbody>
+</table></div>
+<p>O bloco segue o tema do seu app pela cor de destaque, que pinta a hora, a chave e os ícones. O bloco em si continua uma superfície escura. A <a href="/pt-br/features/alarm-groups/">etiqueta</a> de um alarme aparece como ícone no bloco e como ícone mais nome no widget retangular. As cores das etiquetas aparecem no bloco.</p>
+<h2 id="when-to-use">Quando usar</h2>
+<h3 id="ap-the-check-in-bed">A conferida na cama</h3>
+<p>Você está deitado e fica na dúvida se o alarme de amanhã está definido. Um widget da Tela Bloqueada responde com uma olhada na tela bloqueada, com ON ou OFF impresso nele.</p>
+<h3 id="ap-an-alarm-weeks-away">Um alarme daqui a semanas</h3>
+<p>Você definiu um <a href="/pt-br/features/date-alarms/">alarme de data</a> para um voo ou uma prova. Quando ele vira seu alarme mais próximo, o bloco mostra “Próximo: 13 de dezembro”, ou “Em 5 dias” no modo Contagem regressiva, e você vê que está armado.</p>
+<h3 id="ap-a-morning-you-want-off">Uma manhã que você quer livre</h3>
+<p>Seu alarme de dias úteis deve ficar quieto em um feriado. Pule essa ocorrência no app (Pular no cartão do alarme, ou o dia na visualização de calendário; pular é um recurso premium) e o widget passa para o próximo toque de verdade. Para silenciar o próximo alarme sem abrir o app, mude a chave da Tela de Início.</p>
+<h3 id="ap-shift-work-and-mixed-alarms">Trabalho em turnos e alarmes variados</h3>
+<p>Com vários alarmes em dias diferentes, o widget sempre mostra o toque mais próximo, não a primeira linha de uma lista. O ícone da etiqueta diz a que grupo ele pertence, como Trabalho ou Viagem.</p>
+<h3 id="ap-checking-a-nap-or-snooze">Conferindo um cochilo ou uma soneca</h3>
+<p>Ative <strong>Mostrar soneca/cochilo no widget</strong> por alguns dias se quiser que o widget confirme um alarme de cochilo. Desative de novo se o próximo alarme ficar pulando depois de cada soneca.</p>
+<h2 id="limits">Limites</h2>
+<ul>
+<li><strong>Só um alarme.</strong> O widget mostra o único alarme mais próximo, não uma lista. Para todos os alarmes de uma vez, use o app ou a <a href="/pt-br/features/calendar-view/">visualização de calendário</a>.</li>
+<li><strong>Sem opções de tamanho.</strong> Não há tamanho médio nem grande para a Tela de Início, e o widget não tem ajustes próprios. As opções de exibição ficam nos Ajustes do app.</li>
+<li><strong>Os widgets da Tela Bloqueada são só de leitura.</strong> Só o bloco da Tela de Início tem chave. Tocar em um widget da Tela Bloqueada abre a aba Alarmes.</li>
+<li><strong>Ativar um alarme pelo widget precisa do app.</strong> Desativar um alarme pelo widget o cancela na hora. Ativá-lo só deixa a mudança na fila, e o alarme é programado de novo na próxima vez que você abrir o Alarm Clock Planner. O bloco o mostra como ativado antes disso, então abra o app depois.</li>
+<li><strong>Precisão de dias.</strong> Um widget não consegue contar em tempo real, então mostra dias e não horas e minutos. O cabeçalho da aba Alarmes no app mostra o tempo exato que falta quando o próximo alarme está a menos de 24 horas.</li>
+<li><strong>Ele mostra um alarme desativado também.</strong> Um alarme desligado continua aparecendo, esmaecido, para você poder ativá-lo de novo. Alarmes arquivados não aparecem.</li>
+<li><strong>Bloco escuro.</strong> O bloco da Tela de Início continua escuro no modo claro e no modo escuro, e só o destaque segue o tema.</li>
+</ul>
+<p>Se o widget parecer desatualizado, abra o app uma vez. Toda mudança de alarme no app atualiza o widget. Você pode ler mais no <a href="/pt-br/guides/iphone-alarm-widget-lock-screen/">guia do widget</a>.</p>
+<section class="guide-faq">
+<h2>Perguntas frequentes</h2>
+<h3>Existe um widget de alarme para iPhone?</h3>
+<p>Sim, o Alarm Clock Planner inclui um chamado Próximo alarme. Ele vem como um widget pequeno para a Tela de Início e como widgets circular e retangular para a Tela Bloqueada, todos mostrando seu próximo alarme.</p>
+<h3>Como adiciono o widget de alarme à minha Tela de Início?</h3>
+<p>Adicione o widget Próximo alarme pela galeria de widgets, onde ele aparece em Alarm Planner. O guia da Apple Adicionar, editar e remover widgets cobre os passos da galeria. O guia deste site cobre o lado do iPhone com mais detalhes.</p>
+<h3>Por que meu widget de alarme não funciona ou mostra o alarme errado?</h3>
+<p>O widget mostra seu toque mais próximo, então uma ocorrência pulada o leva para a seguinte. Um alarme desligado continua aparecendo, esmaecido e marcado como OFF, para você poder ativá-lo de novo. Alarmes de soneca e de cochilo ficam ocultos, a menos que você ative Mostrar soneca/cochilo no widget nos Ajustes. Abrir o app uma vez atualiza o widget.</p>
+<h3>Posso ativar ou desativar um alarme pelo widget?</h3>
+<p>No bloco da Tela de Início, sim. Desativar um alarme o cancela na hora. Ativá-lo fica salvo e é concluído no app, então abra o Alarm Clock Planner depois para garantir que o alarme foi programado. Os widgets da Tela Bloqueada não têm chave.</p>
+<h3>O widget pode mostrar uma contagem regressiva?</h3>
+<p>Sim, em passos de dias. Defina Próximo alarme como em Contagem regressiva nos Ajustes e o bloco diz Hoje, Amanhã e depois, por exemplo, Em 5 dias ou Em 2 meses. Ele não mostra horas e minutos, porque um widget não consegue contar em tempo real.</p>
+<h3>Como removo o widget de alarme da minha Tela de Início?</h3>
+<p>Remova-o como qualquer outro widget, como a Apple descreve em Adicionar, editar e remover widgets. Seus alarmes não são afetados, já que o widget só os exibe.</p>
+</section>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Existe um widget de alarme para iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, o Alarm Clock Planner inclui um chamado Próximo alarme. Ele vem como um widget pequeno para a Tela de Início e como widgets circular e retangular para a Tela Bloqueada, todos mostrando seu próximo alarme."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como adiciono o widget de alarme à minha Tela de Início?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adicione o widget Próximo alarme pela galeria de widgets, onde ele aparece em Alarm Planner. O guia da Apple Adicionar, editar e remover widgets cobre os passos da galeria. O guia deste site cobre o lado do iPhone com mais detalhes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que meu widget de alarme não funciona ou mostra o alarme errado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O widget mostra seu toque mais próximo, então uma ocorrência pulada o leva para a seguinte. Um alarme desligado continua aparecendo, esmaecido e marcado como OFF, para você poder ativá-lo de novo. Alarmes de soneca e de cochilo ficam ocultos, a menos que você ative Mostrar soneca/cochilo no widget nos Ajustes. Abrir o app uma vez atualiza o widget."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso ativar ou desativar um alarme pelo widget?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No bloco da Tela de Início, sim. Desativar um alarme o cancela na hora. Ativá-lo fica salvo e é concluído no app, então abra o Alarm Clock Planner depois para garantir que o alarme foi programado. Os widgets da Tela Bloqueada não têm chave."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O widget pode mostrar uma contagem regressiva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, em passos de dias. Defina Próximo alarme como em Contagem regressiva nos Ajustes e o bloco diz Hoje, Amanhã e depois, por exemplo, Em 5 dias ou Em 2 meses. Ele não mostra horas e minutos, porque um widget não consegue contar em tempo real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como removo o widget de alarme da minha Tela de Início?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Remova-o como qualquer outro widget, como a Apple descreve em Adicionar, editar e remover widgets. Seus alarmes não são afetados, já que o widget só os exibe."
+      }
+    }
+  ]
+}</script>
+<section class="guide-sources">
+<h2>Fontes</h2>
+<ol>
+<li><a href="https://support.apple.com/guide/iphone/add-edit-and-remove-widgets-iphb8f1bf206/ios" rel="noopener">Apple Support: Adicionar, editar e remover widgets no iPhone</a></li>
+<li><a href="https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios" rel="noopener">Apple Support: Criar uma Tela Bloqueada personalizada no iPhone</a></li>
+</ol>
+</section>
+<div class="ap-end"><h2>Seu próximo alarme, a um olhar de distância</h2><a class="ap-get-btn" data-ph="appstore_click" href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_FeatureEnd&amp;mt=8">Baixe o Alarm Clock Planner na App Store</a></div>
+<div class="related">
+<h2>Guias relacionados</h2>
+<ul>
+<li><a href="/pt-br/guides/iphone-alarm-widget-lock-screen/">Widget de alarme no iPhone: Tela de Início e Tela Bloqueada</a></li>
+<li><a href="/pt-br/guides/skip-alarm-once-iphone/">Como pular um alarme do iPhone por um dia</a></li>
+<li><a href="/pt-br/guides/set-alarm-for-specific-date-iphone/">Como definir um alarme para uma data específica no iPhone</a></li>
+</ul>
+<p><a href="/pt-br/guides/">Todos os guias</a></p>
+</div>
+<style>
+.ap-rating{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;font-size:15px;opacity:.92}
+.ap-rating .st{position:relative;display:inline-block;letter-spacing:2px;color:rgba(127,127,127,.35)}
+.ap-rating .st i{position:absolute;inset:0 auto 0 0;overflow:hidden;white-space:nowrap;color:#f5b301;font-style:normal}
+.ap-rating b{font-weight:700}
+.ap-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:24px 0 8px}
+.ap-cards a.ap-card{display:flex;flex-direction:column;border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;
+ border:1px solid rgba(127,127,127,.22);background:rgba(127,127,127,.06)}
+.ap-cards a.ap-card:hover{border-color:rgba(127,127,127,.45)}
+.ap-card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.ap-card .tx{padding:14px 16px 16px}
+.ap-card h2,.ap-card h3{font-size:18px;margin:0 0 6px;line-height:1.3}
+.ap-card p{margin:0;font-size:15px;opacity:.8;line-height:1.5}
+.ap-rel{border-top:1px solid rgba(127,127,127,.22);padding:22px 0 0;margin:28px 0 0}
+.ap-rel h2{font-size:20px;margin:0 0 10px}
+.ap-release{border-top:1px solid rgba(127,127,127,.22);padding:18px 0 4px}
+.ap-release h2{font-size:20px;margin:0 0 4px}
+.ap-release .when{font-size:14px;opacity:.7;margin:0 0 8px}
+.ap-release ul{margin:6px 0 10px;padding-left:20px}
+@media (max-width:520px){.ap-cards{grid-template-columns:1fr}}
+</style><section class="ap-rel"><h2>Mais recursos</h2><div class="ap-cards"><a class="ap-card" href="/pt-br/features/alarm-groups/"><img alt="Alarm Clock Planner no iPhone: alarmes organizados nos grupos Família e Trabalho, e o gerenciador de grupos coloridos" height="864" loading="lazy" onerror="this.onerror=null;this.src='/assets/features/alarm-groups/alarm-groups.png'" src="/assets/features/alarm-groups/alarm-groups.webp?v=ff33cc4a" width="1536"/><div class="tx"><h3>Grupos de alarmes com identificação por cor</h3><p>Grupos coloridos como Trabalho, Família ou Viagem, cada um com seu próprio som e soneca, além de ativar, desativar e editar em massa um grupo inteiro de uma vez com acesso ilimitado.</p></div></a><a class="ap-card" href="/pt-br/features/calendar-view/"><img alt="Alarm Clock Planner no iPhone: o calendário mensal com os alarmes marcados nos dias em que tocam" height="864" loading="lazy" onerror="this.onerror=null;this.src='/assets/features/calendar-view/calendar-view.png'" src="/assets/features/calendar-view/calendar-view.webp?v=c6d673b1" width="1536"/><div class="tx"><h3>Visualização de calendário de todos os alarmes</h3><p>Todos os alarmes em uma grade mensal, coloridos por grupo; toque em um dia para ver, editar ou pular o que toca nesse dia.</p></div></a><a class="ap-card" href="/pt-br/features/custom-sounds/"><img alt="Alarm Clock Planner no iPhone: a lista de sons de alarme com a opção de adicionar seu próprio som" height="864" loading="lazy" onerror="this.onerror=null;this.src='/assets/features/custom-sounds/custom-sounds.png'" src="/assets/features/custom-sounds/custom-sounds.webp?v=8fccc4c2" width="1536"/><div class="tx"><h3>Seus próprios sons de alarme, de qualquer arquivo de áudio</h3><p>Importe qualquer arquivo de áudio como som de alarme, cortado em 30 segundos, ou escolha um dos 15 toques integrados, por alarme, por grupo ou como padrão.</p></div></a></div><p><a href="/pt-br/features/">Todos os recursos</a></p></section>
+</article>
+</main>
+<style>
+.sf{border-top:1px solid var(--border,rgba(127,127,127,.22));padding:44px 0 34px;font-size:14px;color:var(--muted,#9aa6bf)}
+.sf a{color:var(--muted,#9aa6bf);text-decoration:none}.sf a:hover{color:var(--text,#fff);text-decoration:none}
+.sf-brand{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-bottom:22px}
+.sf-name{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--text,#fff)}
+.sf-name img{width:30px;height:30px;border-radius:8px}
+.sf-note{margin:0;font-size:13px;line-height:1.5}
+.sf-dl{margin-left:auto;padding:10px 16px;border-radius:10px;font-weight:700;font-size:13px;letter-spacing:.03em;text-transform:uppercase;
+  background:var(--accent,#34d477);color:var(--ap-on-accent,#06210f)!important}
+.sf-dl:hover{filter:brightness(1.06)}
+.sf-main{display:flex;flex-wrap:wrap;gap:8px 22px;padding-bottom:20px;border-bottom:1px solid var(--border,rgba(127,127,127,.22))}
+.sf-main a{color:var(--accent,#34d477);font-size:14.5px}.sf-main a:hover{color:var(--text,#fff)}
+.sf a.cur{color:var(--accent,#34d477);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.sf-sec{padding:18px 0;border-bottom:1px solid var(--border,rgba(127,127,127,.22))}
+.sf-sec:last-of-type{border-bottom:0}
+.sf-label{display:block;margin-bottom:12px;font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--text,#fff)}
+.sf-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px 18px;line-height:1.4}
+.sf-grid>a,.sf-grid>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sf-note{white-space:nowrap}
+.sf-grid>a{color:var(--muted,#9aa6bf);opacity:.8}.sf-grid>a:hover{opacity:1;color:var(--text,#fff)}
+.sf-grid .on{color:var(--accent,#34d477);font-weight:700}
+.sf-legal{margin:18px 0 0;font-size:12px;opacity:.7}
+@media (max-width:900px){.sf-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.sf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sf-dl{margin-left:0}}
+</style>
+<footer class="site-footer sf">
+<div class="container">
+<div class="sf-brand">
+<div class="sf-name"><img alt="" height="30" src="/assets/apple-touch-icon.png?v=e79105dc" width="30"/>Alarm Clock Planner</div>
+<p class="sf-note">O despertador do iPhone para datas, não só dias da semana.</p>
+<a class="sf-dl" data-ph="appstore_click" href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=Website_Feature&amp;mt=8">Baixar na App Store</a>
+</div>
+<div aria-label="Rodapé" class="sf-main" role="navigation"><a href="/pt-br/features/">Recursos</a><a href="/pt-br/guides/">Guias</a><a href="/pt-br/compare/">Comparar</a><a href="/pt-br/tools/nap-calculator/">Calculadora de cochilo</a><a href="/pt-br/whats-new/">Novidades</a><a href="/pt-br/about/">Sobre</a><a href="/pt-br/support/">Suporte</a><a href="/privacy/">Privacidade</a><a href="/terms/">Termos</a></div>
+<div class="sf-sec"><span class="sf-label">Recursos</span><div class="sf-grid"><a href="/pt-br/features/date-alarms/">Alarmes por data</a><a href="/pt-br/features/repeating-alarms/">Alarmes repetidos</a><a href="/pt-br/features/alarm-groups/">Grupos de alarmes</a><a href="/pt-br/features/rings-on-silent/">Toca no Silencioso</a><a href="/pt-br/features/calendar-view/">Visualização de calendário</a><a href="/pt-br/features/custom-sounds/">Sons personalizados</a><a href="/pt-br/features/nap-alarms/">Alarmes de cochilo</a><a href="/pt-br/features/snooze/">Soneca personalizada</a><a href="/pt-br/features/widgets/">Widgets</a><a href="/pt-br/features/themes-and-icons/">Temas e ícones</a><a href="/pt-br/features/icloud-backup/">Backup do iCloud</a></div></div><div class="sf-sec"><span class="sf-label">Comparar</span><div class="sf-grid"><a href="/pt-br/compare/alarm-clock-planner-vs-iphone-clock/">vs Relógio</a><a href="/pt-br/compare/alarm-clock-planner-vs-galarm/">vs Galarm</a><a href="/pt-br/compare/alarm-clock-planner-vs-alarmy/">vs Alarmy</a><a href="/pt-br/compare/alarm-clock-planner-vs-sleep-cycle/">vs Sleep Cycle</a><a href="/pt-br/compare/alarm-clock-planner-vs-datealarm/">vs DateAlarm</a><a href="/pt-br/compare/alarm-clock-planner-vs-alarm-clock-for-me/">vs Alarm Clock for Me</a><a href="/pt-br/compare/alarm-clock-planner-vs-alarm-clock-hd/">vs Alarm Clock HD</a><a href="/pt-br/compare/alarm-clock-planner-vs-loud-alarm-clock/">vs Loud Alarm Clock</a><a href="/pt-br/compare/alarm-clock-planner-vs-wayk/">vs Wayk</a><a href="/pt-br/compare/alarm-clock-planner-vs-one-touch-alarm-clock/">vs One Touch</a><a href="/pt-br/compare/">Todos comparados</a></div></div><div class="sf-sec"><span class="sf-label">Mais apps do mesmo desenvolvedor</span><div class="sf-grid"><a href="https://remireminder.app/">Remi</a><a href="https://risemorning.app/">Rise</a><a href="https://getscooch.com/">Scooch</a><a href="https://getcharactersheet.com/">CharacterSheet</a><a href="https://getchoru.com/">Choru</a></div></div><div class="sf-sec"><span class="sf-label">Idioma</span><div class="sf-grid"><a href="/features/widgets/" hreflang="en" lang="en">English</a><a href="/de/features/widgets/" hreflang="de" lang="de">Deutsch</a><a href="/it/features/widgets/" hreflang="it" lang="it">Italiano</a><a href="/es/features/widgets/" hreflang="es" lang="es">Español</a><a href="/fr/features/widgets/" hreflang="fr" lang="fr">Français</a><span class="on" lang="pt-BR">Português (Brasil)</span></div></div>
+<p class="sf-legal">© <a href="https://ozols.dev" rel="author">Emils Ozols</a>. Apple, iPhone e o selo da App Store são marcas registradas da Apple Inc.</p>
+</div>
+<script>document.querySelectorAll('.sf a').forEach(function(a){if(a.pathname===location.pathname)a.classList.add('cur')});</script>
+</footer>
+<script>
+    document.addEventListener('click', function (e) {
+        var el = e.target.closest('[data-ph]');
+        if (el && window.posthog) {
+            posthog.capture(el.getAttribute('data-ph'), { page: location.pathname });
+        }
+    });
+</script>
+<script>
+// A ringing iPhone peeks in from a random edge or corner, buzzes for a moment, and slides away.
+// Decoration only: pointer-events none, hidden from screen readers, off for prefers-reduced-motion,
+// only on screens wide enough to have margins beside the content, paused while the tab is hidden.
+// Inlined into every page by gen_guides.py (RING_JS); ?ring=demo makes it ring every 2.5 s.
+(function () {
+  if (!window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var T = function (k) { return (window.AP_T && window.AP_T[k]) || k; };   // translated pages set window.AP_T
+  var demo = /[?&]ring=demo\b/.test(location.search);
+  var hold = demo && /[?&]hold=(\d)/.exec(location.search);   // ?ring=demo&hold=N: park at spot N, buzzing
+
+  var css = '' +
+    '.rp{position:fixed;z-index:30;width:108px;height:222px;pointer-events:none;will-change:transform}' +
+    '.rp .ph{pointer-events:auto;cursor:pointer}' +
+    '.rp-say{position:fixed;z-index:31;pointer-events:none;padding:8px 13px;border-radius:12px;background:#34d477;color:#06210f;font:600 14px/1.3 -apple-system,BlinkMacSystemFont,Inter,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.4);opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s;max-width:220px}' +
+    '.rp-say.on{opacity:1;transform:none}' +
+    '.rp svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 14px rgba(52,212,119,.35)) drop-shadow(0 10px 24px rgba(0,0,0,.5))}' +
+    '.rp .ph{transform-box:fill-box;transform-origin:center}' +
+    '.rp .wv{opacity:0;transform-origin:39px 80px}' +
+    '.rp.buzz .ph{animation:rpBuzz .09s linear infinite alternate}' +
+    '.rp.buzz .wv{animation:rpWave .55s ease-out infinite}' +
+    '.rp.buzz .wv.b{animation-delay:.27s}' +
+    '.rp.buzz .glow{animation:rpGlow .55s ease-in-out infinite alternate}' +
+    '@keyframes rpBuzz{0%{transform:translate(-1.6px,0) rotate(-3deg)}100%{transform:translate(1.6px,0) rotate(3deg)}}' +
+    '@keyframes rpWave{0%{opacity:.95;transform:scale(.92)}100%{opacity:0;transform:scale(1.22)}}' +
+    '@keyframes rpGlow{0%{opacity:.35}100%{opacity:.9}}';
+  var phone = '' +
+    '<svg viewBox="0 0 78 160" aria-hidden="true" focusable="false">' +
+    // ring lines on both sides, drawn as arcs
+    '<g class="wv" fill="none" stroke="#34d477" stroke-width="3.6" stroke-linecap="round">' +
+    '<path d="M-4 62q-8 18 0 36"/><path d="M82 62q8 18 0 36"/></g>' +
+    '<g class="wv b" fill="none" stroke="#34d477" stroke-width="3" stroke-linecap="round">' +
+    '<path d="M-13 54q-12 26 0 52"/><path d="M91 54q12 26 0 52"/></g>' +
+    '<g class="ph">' +
+    '<rect x="3" y="3" width="72" height="154" rx="15" fill="#2b3447" stroke="#9aa6bf" stroke-width="2.2"/>' +
+    '<rect x="7" y="7" width="64" height="146" rx="11.5" fill="#13213a"/>' +
+    '<rect x="28" y="12" width="22" height="6.5" rx="3.25" fill="#000"/>' +                 // Dynamic Island
+    '<circle class="glow" cx="39" cy="62" r="20" fill="#34d477" opacity=".35"/>' +
+    '<circle cx="39" cy="62" r="13.5" fill="#34d477"/>' +
+    // bell
+    '<path d="M39 53.5c-3.9 0-6.4 2.9-6.4 6.6v4.1l-2.1 3.2h17l-2.1-3.2v-4.1c0-3.7-2.5-6.6-6.4-6.6z" fill="#0b1120"/>' +
+    '<circle cx="39" cy="69.6" r="1.9" fill="#0b1120"/>' +
+    '<text x="39" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Inter,sans-serif" font-size="17" font-weight="700" fill="#fff" class="tm">7:00</text>' +
+    '<rect x="15" y="126" width="48" height="13" rx="6.5" fill="#34d477" opacity=".9"/>' +  // the stop button
+    '<rect x="29" y="146" width="20" height="2.5" rx="1.25" fill="#3a4560"/>' +
+    '</g></svg>';
+
+  // Where it can appear. Each spot: how to place it fixed, its rotation (top of the phone points into the page),
+  // and the direction it slides in from.
+  function spots() {
+    var y = function () { return Math.round(innerHeight * (0.25 + Math.random() * 0.5) - 111); };
+    return [
+      { pos: { left: '0px', top: y() + 'px' }, rot: 90, from: [-1, 0], peek: 0.72 },
+      { pos: { right: '0px', top: y() + 'px' }, rot: -90, from: [1, 0], peek: 0.72 },
+      { pos: { left: '0px', top: '70px' }, rot: 135, from: [-1, -1], peek: 0.7 },
+      { pos: { right: '0px', top: '70px' }, rot: -135, from: [1, -1], peek: 0.7 },
+      { pos: { left: '0px', bottom: '0px' }, rot: 45, from: [-1, 1], peek: 0.7 },
+      { pos: { right: '0px', bottom: '0px' }, rot: -45, from: [1, 1], peek: 0.7 }
+    ];
+  }
+
+  // Tap the phone to snooze it. Three snoozes and it gives up for the rest of the visit.
+  var SNOOZE = ['Snoozed. 9 more minutes.', 'Snoozed again? Bold.', 'Fine. Alarm off. Sweet dreams.'];
+  function store(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
+  function say(text, el) {
+    var r = el.getBoundingClientRect(), b = document.createElement('div');
+    b.className = 'rp-say'; b.setAttribute('aria-hidden', 'true'); b.textContent = text;
+    document.body.appendChild(b);
+    var x = Math.min(Math.max(r.left + r.width / 2 - 110, 12), innerWidth - 232), y = Math.min(Math.max(r.top + r.height / 2 - 20, 70), innerHeight - 60);
+    b.style.left = x + 'px'; b.style.top = y + 'px';
+    requestAnimationFrame(function () { b.classList.add('on'); });
+    setTimeout(function () { b.classList.remove('on'); setTimeout(function () { b.remove(); }, 250); }, 1800);
+  }
+  function now() { var d = new Date(); return d.getHours() + ':' + ('0' + d.getMinutes()).slice(-2); }
+
+  var last = -1, busy = false;
+  function ring() {
+    if (store('rp-off')) return;
+    if (busy || document.hidden || innerWidth < 1000) return schedule();
+    var all = spots(), i;
+    if (hold) i = +hold[1];
+    else do { i = Math.floor(Math.random() * all.length); } while (i === last && all.length > 1);
+    last = i;
+    var s = all[i], el = document.createElement('div');
+    el.className = 'rp';
+    el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = phone;
+    el.querySelector('.tm').textContent = now();   // it rings at the visitor's own time
+    for (var k in s.pos) el.style[k] = s.pos[k];
+    document.body.appendChild(el);
+    busy = true;
+    // Off-screen start, then a peek: the phone sits with part of it past the edge.
+    var H = 222, out = 'translate(' + (s.from[0] * 200) + 'px,' + (s.from[1] * 200) + 'px) rotate(' + s.rot + 'deg)';
+    var inn = 'translate(' + (s.from[0] * H * (1 - s.peek) * 0.45) + 'px,' + (s.from[1] * H * (1 - s.peek) * 0.45) + 'px) rotate(' + s.rot + 'deg)';
+    el.animate([{ transform: out }, { transform: inn }], { duration: 380, easing: 'cubic-bezier(.2,.9,.3,1.25)', fill: 'forwards' })
+      .onfinish = function () {
+        el.classList.add('buzz');
+        if (hold) return;
+        var gone = false;
+        function leave() {
+          if (gone) return; gone = true;
+          el.classList.remove('buzz');
+          el.animate([{ transform: inn }, { transform: out }], { duration: 300, easing: 'cubic-bezier(.5,0,.8,.4)', fill: 'forwards' })
+            .onfinish = function () { el.remove(); busy = false; schedule(); };
+        }
+        el.querySelector('.ph').addEventListener('click', function () {
+          var n = +(store('rp-snoozes') || 0) + 1;
+          store('rp-snoozes', n);
+          say(T(SNOOZE[Math.min(n, 3) - 1]), el);
+          if (n >= 3) store('rp-off', '1');
+          leave();
+        });
+        setTimeout(leave, 1300);   // a little longer than the buzz so there is time to tap it
+      };
+  }
+  function schedule() { setTimeout(ring, demo ? 2500 : 7000 + Math.random() * 7000); }
+
+  function start() {
+    var st = document.createElement('style');
+    st.textContent = css;
+    document.head.appendChild(st);
+    setTimeout(ring, demo ? 600 : 3500);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
+</script>
+<script>
+// Small touches that give the site its personality (2026-11-01). Inlined into every page by gen_guides.py.
+// 1. A scrollbar on the right whose thumb is the app's alarm clock icon: it grows and rings while you scroll,
+//    and can be dragged or tapped. Wide screens only; phones keep their own scrollbar.
+// 2. Hand-drawn arrows with a note that point at the important bits, drawn in when they scroll into view.
+// 3. Time-aware lines: a late-night nudge on the homepage, reading time measured in snoozes on guides.
+// Everything is decoration: aria-hidden, no layout shift, nothing moves for prefers-reduced-motion.
+(function () {
+  var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var T = function (k) { return (window.AP_T && window.AP_T[k]) || k; };   // translated pages set window.AP_T
+  var css = '' +
+    // 1. scrollbar
+    'html.ap-sb{scrollbar-width:none}html.ap-sb::-webkit-scrollbar{display:none}' +
+    '.ap-sb-track{position:fixed;z-index:40;top:74px;bottom:18px;right:8px;width:6px;border-radius:3px;background:rgba(154,166,191,.16);cursor:pointer}' +
+    '.ap-sb-thumb{position:absolute;left:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:8px;cursor:grab;touch-action:none;' +
+    'background:url(/assets/apple-touch-icon.png) center/cover;box-shadow:0 0 0 2px rgba(52,212,119,.0),0 4px 12px rgba(0,0,0,.45);transition:transform .18s ease,box-shadow .18s ease}' +
+    '.ap-sb-thumb.on{transform:scale(1.45);box-shadow:0 0 0 2px rgba(52,212,119,.8),0 0 18px rgba(52,212,119,.55)}' +
+    '.ap-sb-thumb.on.ring{animation:apSbRing .1s linear infinite alternate}' +
+    '@keyframes apSbRing{0%{transform:scale(1.45) rotate(-9deg)}100%{transform:scale(1.45) rotate(9deg)}}' +
+    // 2. notes
+    '.ap-note{position:absolute;z-index:5;pointer-events:none;color:#34d477;font:400 21px/1.15 "Bradley Hand","Segoe Print","Comic Sans MS",cursive;white-space:nowrap}' +
+    '.ap-note svg{position:absolute;overflow:visible}' +
+    '.ap-note path{fill:none;stroke:#34d477;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset .7s ease .15s}' +
+    '.ap-note span{display:inline-block;opacity:0;transform:rotate(-4deg) translateY(4px);transition:opacity .4s ease,transform .4s ease}' +
+    '.ap-note.in path{stroke-dashoffset:0}.ap-note.in span{opacity:.95;transform:rotate(-4deg)}' +
+    // 3. time lines
+    '.ap-late{margin:10px 0 0;font-size:14px;color:#34d477;opacity:.9}' +
+    '.ap-read{margin:-4px 0 14px;font-size:14px;opacity:.65}' +
+    // 4. knock the screenshots out of the carousel
+    '.shots-marquee figure{cursor:pointer;transition:width .45s ease,margin .45s ease,opacity .3s ease}' +
+    '.shots-marquee figure.gone{width:0!important;margin-right:0!important;opacity:0}' +
+    '.ko-fall{position:fixed;z-index:60;pointer-events:none;margin:0}' +
+    '.ko-win{display:none;text-align:center;padding:30px 16px 34px}' +
+    '.ko-win.on{display:block;animation:koIn .5s cubic-bezier(.2,.9,.3,1.3)}' +
+    '.ko-win h3{font-size:26px;margin:0 0 6px}.ko-win p{color:var(--muted);margin:0 0 18px}' +
+    '.ko-win .badge-link{display:inline-flex}.ko-win button{display:block;margin:16px auto 0;background:none;border:0;color:var(--accent);font:inherit;font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}' +
+    '@keyframes koIn{0%{opacity:0;transform:scale(.85)}100%{opacity:1;transform:none}}';
+  var st = document.createElement('style');
+  st.textContent = css;
+  document.head.appendChild(st);
+
+  function ready(fn) { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn); else fn(); }
+
+  ready(function () {
+    // ---------- 1. alarm-clock scrollbar ----------
+    var wide = window.matchMedia && matchMedia('(min-width: 1000px) and (hover: hover)');
+    var track, thumb, idle, dragging = false;
+    function maxScroll() { return Math.max(1, document.documentElement.scrollHeight - innerHeight); }
+    function place() {
+      if (!track) return;
+      var h = track.clientHeight, p = Math.min(1, Math.max(0, scrollY / maxScroll()));
+      thumb.style.top = Math.round(15 + p * (h - 30)) + 'px';
+      track.style.display = document.documentElement.scrollHeight > innerHeight + 40 ? '' : 'none';
+    }
+    function wake() {
+      thumb.classList.add('on');
+      if (!still) thumb.classList.add('ring');
+      clearTimeout(idle);
+      idle = setTimeout(function () { thumb.classList.remove('ring'); if (!dragging) thumb.classList.remove('on'); }, 450);
+    }
+    function scrollToY(clientY) {
+      var r = track.getBoundingClientRect(), p = (clientY - r.top - 15) / Math.max(1, r.height - 30);
+      scrollTo(0, Math.min(1, Math.max(0, p)) * maxScroll());
+    }
+    function build() {
+      if (track || !(wide && wide.matches)) return;
+      document.documentElement.classList.add('ap-sb');
+      track = document.createElement('div'); track.className = 'ap-sb-track'; track.setAttribute('aria-hidden', 'true');
+      thumb = document.createElement('div'); thumb.className = 'ap-sb-thumb';
+      track.appendChild(thumb); document.body.appendChild(track);
+      track.addEventListener('click', function (e) { if (e.target === track) { wake(); scrollToY(e.clientY); } });
+      thumb.addEventListener('pointerdown', function (e) {
+        dragging = true; thumb.setPointerCapture(e.pointerId); wake(); e.preventDefault();
+      });
+      thumb.addEventListener('pointermove', function (e) { if (dragging) { scrollToY(e.clientY); wake(); } });
+      thumb.addEventListener('pointerup', function () { dragging = false; wake(); });
+      thumb.addEventListener('click', wake);
+      place();
+    }
+    function teardown() {
+      if (!track) return;
+      track.remove(); track = thumb = null;
+      document.documentElement.classList.remove('ap-sb');
+    }
+    build();
+    if (wide && wide.addEventListener) wide.addEventListener('change', function () { wide.matches ? build() : teardown(); });
+    addEventListener('scroll', function () { if (track) { place(); wake(); } }, { passive: true });
+    addEventListener('resize', function () { place(); notes.forEach(pos); }, { passive: true });
+
+    // ---------- 2. hand-drawn notes ----------
+    // [selector, text, side]: side is where the note sits; the arrow points from it to the element.
+    var NOTES = [
+      ['.hero .ap-rating', 'real ones, too', 'right'],
+      ['#features .feature-card:nth-child(4)', 'tap any card', 'right', '.feature-card h3 a'],
+      ['#screenshots .section-head p', 'tap one. go on.', 'right'],
+      ['.article .ap-get', 'free to download, no account', 'left'],
+      ['.article .ap-toc', 'jump straight to your step', 'right']
+    ];
+    var ARROWS = {   // a curve from the note to the element, in the note's own coordinates
+      above: 'M2 6 C -14 14, -18 28, -10 46 M-19 37 L-10 47 L-3 36',
+      right: 'M-8 2 C -30 2, -42 6, -58 16 M-50 6 L-60 17 L-46 22',
+      left: 'M8 2 C 30 2, 44 8, 60 18 M50 8 L62 19 L48 24'
+    };
+    var notes = [];
+    function pos(n) {
+      var rg = document.createRange(); rg.selectNodeContents(n.target);   // the text itself, not the block around it
+      var r = (n.side === 'right' && /^(P|H\d|SPAN|A)$/.test(n.target.tagName) && rg.getClientRects().length ? rg.getClientRects()[rg.getClientRects().length - 1] : null) ||
+              n.target.getClientRects()[0] || n.target.getBoundingClientRect();
+      var x = r.left + scrollX, y = r.top + scrollY, el = n.el, w = el.offsetWidth;
+      if (n.side === 'above') { el.style.left = (x + 14) + 'px'; el.style.top = (y - 50) + 'px'; }
+      if (n.side === 'right') { el.style.left = (x + r.width + 70) + 'px'; el.style.top = (y - 6) + 'px'; }
+      if (n.side === 'left') { el.style.left = (x - w - 74) + 'px'; el.style.top = (y + 14) + 'px'; }
+      var fits = parseFloat(el.style.left) > 8 && parseFloat(el.style.left) + w < document.documentElement.clientWidth - 24;
+      el.style.display = fits && innerWidth >= 1100 ? '' : 'none';
+      var art = document.querySelector('.hero-art');   // never write over the hero picture
+      if (art && el.style.display === '') {
+        var a = art.getBoundingClientRect(), b = el.getBoundingClientRect();
+        if (b.left < a.right && b.right > a.left && b.top < a.bottom && b.bottom > a.top) el.style.display = 'none';
+      }
+    }
+    NOTES.forEach(function (c) {
+      var t = document.querySelector(c[0]);
+      if (!t || (c[3] && !document.querySelector(c[3]))) return;
+      var el = document.createElement('div');
+      el.className = 'ap-note' + (still ? ' in' : ''); el.setAttribute('aria-hidden', 'true');
+      var svg = c[2] === 'left' ? '<svg style="right:-70px;top:4px" width="70" height="30"><path transform="translate(-4,4)" d="' + ARROWS.left + '"/></svg>'
+        : c[2] === 'right' ? '<svg style="left:0;top:6px" width="1" height="1"><path d="' + ARROWS.right + '"/></svg>'
+        : '<svg style="left:0;top:22px" width="1" height="1"><path d="' + ARROWS.above + '"/></svg>';
+      el.innerHTML = '<span>' + T(c[1]) + '</span>' + svg;
+      document.body.appendChild(el);
+      var n = { el: el, target: t, side: c[2] };
+      notes.push(n); pos(n);
+      if (!still && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (es) {
+          if (es[0].isIntersecting) { setTimeout(function () { el.classList.add('in'); }, 250); io.disconnect(); }
+        }, { threshold: 0.6 });
+        io.observe(t);
+      } else el.classList.add('in');
+    });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { notes.forEach(pos); });
+
+    // ---------- homepage QR card: 'text me the link' only works on a Mac; elsewhere it copies the link ----------
+    var sms = document.querySelector('.hero-qr .ap-sms');
+    if (sms && !/Mac/.test(navigator.platform || navigator.userAgent)) {
+      sms.textContent = T('or copy the link');
+      sms.addEventListener('click', function (e) {
+        e.preventDefault();
+        var url = sms.getAttribute('data-copy');
+        (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () {
+          sms.textContent = T('Copied'); setTimeout(function () { sms.textContent = T('or copy the link'); }, 1600);
+        }, function () { prompt(T('Copy this link:'), url); });
+      });
+    }
+
+    // ---------- 4. tap a screenshot and it falls out of the carousel; knock them all out for a reward ----------
+    var mq = document.querySelector('.shots-marquee');
+    if (mq) {
+      var sets = [].slice.call(mq.querySelectorAll('.shots-set'));
+      var total = sets[0].children.length, left = total, track = mq.querySelector('.shots-track');
+      var store = mq.querySelector('a.badge-link') || document.querySelector('.hero a.badge-link');
+      var win = document.createElement('div');
+      win.className = 'ko-win';
+      win.innerHTML = '<h3>' + T('Good job, you broke it.') + '</h3><p>' + T('Here is your reward: the real thing, on your iPhone.') + '</p>' +
+        (store ? store.outerHTML : '') + '<button type="button">' + T('Put them all back') + '</button>';
+      mq.parentNode.insertBefore(win, mq.nextSibling);
+      win.querySelector('button').addEventListener('click', function () {
+        sets.forEach(function (st) { [].forEach.call(st.children, function (f) { f.classList.remove('gone'); f.style.display = ''; }); });
+        left = total; speed(); mq.style.display = ''; win.classList.remove('on');
+      });
+      function speed() {   // fewer screens, shorter loop: keep the scroll speed the same
+        var a = track.getAnimations ? track.getAnimations()[0] : null;
+        if (a && a.updatePlaybackRate) a.updatePlaybackRate(total / Math.max(left, 1));
+      }
+      mq.addEventListener('click', function (e) {
+        var fig = e.target.closest('figure');
+        if (!fig || fig.classList.contains('gone')) return;
+        var i = [].indexOf.call(fig.parentNode.children, fig);
+        var r = fig.getBoundingClientRect(), ghost = fig.cloneNode(true);
+        ghost.className = 'ko-fall'; ghost.style.left = r.left + 'px'; ghost.style.top = r.top + 'px'; ghost.style.width = r.width + 'px';
+        document.body.appendChild(ghost);
+        // Every fall is different: a pop in a random direction, then a drop off screen with its own drift and spin.
+        var rnd = function (a, b) { return a + Math.random() * (b - a); };
+        var popA = rnd(-150, -30) * Math.PI / 180, pop = rnd(30, 90);          // upward-ish, left or right
+        var px = Math.cos(popA) * pop, py = Math.sin(popA) * pop;
+        var ex = rnd(-420, 420), spin = rnd(-220, 220), tilt = rnd(-25, 25);
+        var drop = innerHeight - r.top + 250;
+        var kind = Math.floor(Math.random() * 3);                               // 0 tumble, 1 flip, 2 shrink away
+        var end = kind === 1 ? 'translate(' + ex + 'px,' + drop + 'px) rotateY(180deg) rotate(' + spin / 2 + 'deg)'
+                : kind === 2 ? 'translate(' + ex * 0.6 + 'px,' + drop * 0.8 + 'px) rotate(' + spin + 'deg) scale(.4)'
+                : 'translate(' + ex + 'px,' + drop + 'px) rotate(' + spin + 'deg)';
+        if (!still && ghost.animate) {
+          ghost.style.perspective = '800px';
+          ghost.animate([{ transform: 'translate(0,0) rotate(0)', opacity: 1 },
+                         { transform: 'translate(' + px + 'px,' + py + 'px) rotate(' + tilt + 'deg)', opacity: 1, offset: rnd(0.14, 0.24) },
+                         { transform: end, opacity: kind === 2 ? 0 : 1 }],
+                        { duration: rnd(900, 1500), easing: 'cubic-bezier(.4,0,.9,.6)' }).onfinish = function () { ghost.remove(); };
+        } else ghost.remove();
+        sets.forEach(function (st) { var f = st.children[i]; if (f) f.classList.add('gone'); });
+        left -= 1;
+        setTimeout(function () {
+          sets.forEach(function (st) { var f = st.children[i]; if (f) f.style.display = 'none'; });
+          speed();
+          if (left === 0) { mq.style.display = 'none'; win.classList.add('on'); }
+        }, 460);
+      });
+    }
+
+    // ---------- 3. time-aware lines ----------
+    var d = new Date(), hh = d.getHours();
+    var cta = document.querySelector('.hero .cta-row');
+    if (cta && (hh >= 22 || hh < 5)) {
+      var late = document.createElement('p');
+      late.className = 'ap-late';
+      late.textContent = T("It's {t}. Is tomorrow's alarm set?").replace('{t}', hh + ':' + ('0' + d.getMinutes()).slice(-2));
+      cta.parentNode.insertBefore(late, cta.nextSibling);
+    }
+    var art = document.querySelector('article.article'), lede = art && art.querySelector(':scope > .lede');
+    if (art && lede && art.querySelector('.ap-get')) {   // guides and feature pages
+      var words = (art.innerText || '').split(/\s+/).length, mins = Math.max(1, Math.round(words / 230));
+      var read = document.createElement('p');
+      read.className = 'ap-read';
+      read.textContent = (mins <= 9 ? T('{n} min read, shorter than one snooze') : T('{n} min read, about {s} snoozes').replace('{s}', Math.round(mins / 9))).replace('{n}', mins);
+      lede.parentNode.insertBefore(read, lede);
+      notes.forEach(pos);
+    }
+  });
+})();
+</script>
+</body>
+</html>
